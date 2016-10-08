@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<!-- Product element describes the software that's in the installer -->
+  <!-- Package element describes the installer itself. -->
+  <Product  Id="*" 
+            Name="Awesome Software" 
+            Language="1033" 
+            Version="1.0.0.0" 
+            Manufacturer="Awesome Company" 
+            UpgradeCode="ddc8b1dd-e5da-496e-9091-7cb8934f058b">
+    
+     <!--  Compressed="yes" Tells installer to package all of the MSI's resources into CAB files. Later, you'll define these CAB files with Media elements or MediaTemplate element. -->
+		<Package  InstallerVersion="200" 
+              Compressed="yes"
+              InstallScope="perMachine"
+              Manufacturer="Awesome Company"
+              Description="Installs Awesome Software"
+              Keywords="Practice, Installer, MSI"
+              Comments="(C) 2012 Awesome Company"
+              />
+
+		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+    <!-- Insure we embed cab files inside the MSI. -->
+		<MediaTemplate EmbedCab="yes"/>
+
+
+    <Directory Id="TARGETDIR"
+               Name="SourceDir">
+      <Directory Id="ProgramFilesFolder">
+        <Directory Id="MyProgramDir"
+                   Name="Install Practice">
+      
+        </Directory>
+      </Directory>      
+    </Directory>
+
+
+    <File Id="fileTXT"
+          Name="myFile.txt"
+          Source="myFile.txt"
+          KeyPath="yes"/>
+      
+    
+		<Feature Id="ProductFeature" Title="SetupProject1" Level="1">
+			<ComponentGroupRef Id="ProductComponents" />
+		</Feature>
+	</Product>
+
+	<Fragment>
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="ProgramFilesFolder">
+				<Directory Id="INSTALLFOLDER" Name="SetupProject1" />
+			</Directory>
+		</Directory>
+	</Fragment>
+
+	<Fragment>
+		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+			<!-- TODO: Remove the comments around this Component element and the ComponentRef below in order to add resources to this installer. -->
+			<!-- <Component Id="ProductComponent"> -->
+				<!-- TODO: Insert files, registry keys, and other resources here. -->
+			<!-- </Component> -->
+		</ComponentGroup>
+	</Fragment>
+</Wix>

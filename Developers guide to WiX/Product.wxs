@@ -23,23 +23,39 @@
     <!-- Insure we embed cab files inside the MSI. -->
 		<MediaTemplate EmbedCab="yes"/>
 
-
-    <Directory Id="TARGETDIR"
-               Name="SourceDir">
+  <!-- A  Directory element always has an Id attribute that will serve as a primary key on the 
+      Directory table. If you're using a predefined name, such as ProgramFilesFolder, use that for 
+      Id. Otherwise, you can make one up yourself. The previous example creates a new directory 
+      called Install Practice, inside the Program Files folder. Id, MyProgramDir, is an arbitrary 
+      value. -->
+    <Directory Id="TARGETDIR" Name="SourceDir">
       <Directory Id="ProgramFilesFolder">
-        <Directory Id="MyProgramDir"
-                   Name="Install Practice">
-      
+        <Directory Id="MyProgramDir" Name="Install Practice">
+
+            <Component Id="CMP_InstallMeTXT"
+                 Guid="9FD9E224-741C-4EA6-871E-1B191415EE70">
+              <File Id="FILE_MyProgramDir_InstallMeTXT"
+                    Source="InstallMe.txt"
+                    keypath="yes"/>
+            </Component>
+
+            <Directory Id="MyFirstSubDir" Name="Subdirectory 1">
+            <Directory Id="MySecondSubDir" Name="Subdirectory 2"/>
+          </Directory>
         </Directory>
       </Directory>      
     </Directory>
 
 
-    <File Id="fileTXT"
-          Name="myFile.txt"
-          Source="myFile.txt"
-          KeyPath="yes"/>
-      
+    <Component Id="CMP_InstallMeTXT"
+               Guid="9FD9E224-741C-4EA6-871E-1B191415EE70">
+      <File Id="FILE_MyProgramDir_InstallMeTXT"
+            Source="InstallMe.txt"
+            keypath="yes"/>            
+    </Component>
+    
+    
+    
     
 		<Feature Id="ProductFeature" Title="SetupProject1" Level="1">
 			<ComponentGroupRef Id="ProductComponents" />

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">	
+	<Fragment>
+		<ComponentGroup Id="MyComponentGroup" Directory="INSTALLFOLDER">
+      <Component Id="CMP_MyProgramEXE"
+                 Guid="*">
+        <File Id="FILE_myProgramEXE"
+              Source="MyProgram.exe"
+              KeyPath="yes"/>      
+      </Component>
+      <Component Id="CMP_AnotherFileDLL"
+                 Guid="*">
+        <File Id="FILE_AnotherFileDLL"
+              Source="AnotherFile.dll"
+              KeyPath="yes"/>        
+      </Component>
+		</ComponentGroup>
+	</Fragment>
+</Wix>

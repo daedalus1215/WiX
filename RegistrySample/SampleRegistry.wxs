@@ -13,7 +13,30 @@
     <Property Id="INSTALLDIR">
       <RegistrySearch Id='AcmeFoobarRegistry' Type='raw' Root='HKLM' Key='Software\Acme\Foobar 1.0' Name='InstallDir' />
     </Property>
-
+  <!-- What do you want to show if you have a newer version already installed. -->
+    <MajorUpgrade />
+    <!-- If we set this to yes it will make the installer all one file, otherwise we will get a second file (cab file). -->
+    <!-- If you had to do this on multiple disks this is where we would do it. -->
+    <MediaTemplate EmbedCab='yes'/>
+    
+    <!-- Features is where we can allow the user to choose which components they want to install, can split up installation process. -->
+    <Feature Id=''></Feature>
+    <!-- The windows UI for this and the different Id's give us different types of windows, we selected the most 
+      minimal one.
+    -->
+    <!-- 
+      WixUI_Advanced
+      WixUI_FeatureTree
+      WixUI_InstallDir
+      WixUI_Minimal
+      WixUI_Mondo
+    -->
+    <UIRef Id='WixUI_Minimal' />
+      
+    
+    
+    
+    <!-- Always have TARGETDIR the root directory -->
     <Directory Id='TARGETDIR' Name='SourceDir'>
       <Directory Id='ProgramFilesFolder' Name='PFiles'>
         <Directory Id='Acme' Name='Acme'>

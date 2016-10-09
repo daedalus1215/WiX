@@ -47,12 +47,13 @@
     </Directory>
 
 
-    <Component Id="CMP_InstallMeTXT"
-               Guid="9FD9E224-741C-4EA6-871E-1B191415EE70">
-      <File Id="FILE_MyProgramDir_InstallMeTXT"
-            Source="InstallMe.txt"
-            keypath="yes"/>            
+    <Component>
+      <File Id="FILE_MyProgramDir_SomeAssemblyDLL"
+            Name="Some Assembly.dll"
+            Source="SomeAssembly.dll"
+            KeyPath="yes"/>
     </Component>
+    
     
     
     

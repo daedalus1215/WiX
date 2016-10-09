@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Product Id="*" Name="Copying_files" Language="1033" Version="1.0.0.0" Manufacturer="" UpgradeCode="ce7d3464-2bf9-48a0-8118-d3f72b2412ec">
+		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+		<MediaTemplate />
+
+		<Feature Id="ProductFeature" Title="Copying_files" Level="1">
+			<ComponentGroupRef Id="ProductComponents" />
+		</Feature>
+	</Product>
+
+
+
+  <Directory Id="TARGETDIR"
+             Name="SourceDir">
+      <Directory Id="MyProgramDir" 
+                 Name="Iag">
+        <Directory Id="MyProgramDirApache"
+                   Name="Apache">
+        </Directory>
+    </Directory>    
+  </Directory>
+
+  
+  <!-- Components -->
+  <DirectoryRef Id="MyProgramDir">
+    <Component Id="CMP_InstallMeTXT"
+               Guid="E8A58B7B-F031-4548-9BDD-7A6796C8460D">
+      <File Id="FILE_InstallMeTXT" 
+            Source="InstallMe.txt" 
+            KeyPath="yes">
+        <CopyFile Id="Copy_InstallMeTXT" 
+                  DestinationDirectory="CopiedFiles"
+                  DestinationName="InstallMeCOPY.txt"/>
+      </File>
+    </Component>
+  </DirectoryRef>
+	
+</Wix>

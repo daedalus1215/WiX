@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  
+  
+  <Product Id="*"
+           Name="Recovery Case Manager" 
+           Language="1033" 
+           Version="1.0.0.0" 
+           Manufacturer="iAutomate" 
+           UpgradeCode="ce7d3464-2bf9-48a0-8118-d3f72b2412ec">
+    
+    
+    <Package InstallerVersion="200" 
+              Compressed="yes" 
+              InstallScope="perMachine" />
+
+    
+    <MajorUpgrade 
+      DowngradeErrorMessage="A newer version of Recovery Case Manager is already installed." />
+    <MediaTemplate />
+
+    
+    <Feature Id="ApacheFeature" Title="Apache Install" Level="1">
+      <ComponentGroupRef Id="ApacheComponents" />
+    </Feature>
+
+    <Feature Id="PhpFeature" Title="Php Install" Level="1">
+      <ComponentGroupRef Id="PhpComponents" />
+    </Feature>
+
+
+    <Fragment>
+      <!-- Will default to C:\ if that is the main disk -->
+      <Directory Id="TARGETDIR" Name="SourceDir">
+        <!-- Will reference to C:\Iag -->
+        <Directory Id="MyProgramDir" Name="Iag">
+          <!-- Will reference to C:\Iag\Apache -->
+          <Directory Id="MyProgramDirApache" Name="Apache" />
+          <!-- Will reference to C:\Iag\Php -->
+          <Directory Id="MyProgramDirPhp" Name="Php"/>
+        </Directory>
+      </Directory>
+    </Fragment>
+
+
+    <Fragment>
+      <ComponentGroup Id="ApacheComponents" Directory="INSTALLFOLDER">
+        <Component Id="ApacheComponent" Guid="{GENERATE_GUID}">
+          <!-- We need to generate out file components. -->
+        </Component>
+      </ComponentGroup>
+    </Fragment>
+    
+    
+  </Product>
+</Wix>
+

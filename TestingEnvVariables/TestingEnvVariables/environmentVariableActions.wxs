@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Fragment>
+    <!-- Step 2: Declare the removal of envVariables -->
+    <Component Id="envVarActions" Guid="{A404A63E-5A4A-477E-959B-C8086B4425DE}" Directory="ApplicationRootDirectory">
+      <!-- Seems to be required when doing envVariable work. -->
+      <CreateFolder/>
+      <!-- Remove envVariables so we don't point to old path -->
+      <Environment Id="envVarRemovalPhp" Name="Path" Value="C:\php"        Permanent="no" Part="last" Action="remove" System="yes" />
+      <Environment Id="envVarRemovalApache" Name="Path" Value="C:\apache\bin" Permanent="no" Part="last" Action="remove" System="yes" />
+      <!-- Add envVariables to the new paths -->
+      <Environment Id="envVarCreatePhp" Name="Path" Value="C:\iag\php" Permanent="no" Part="last" Action="set" System="yes" />
+      <Environment Id="envVarCreateApache" Name="Path" Value="C:\iag\apache\bin" Permanent="no" Part="last" Action="set" System="yes" />
+    </Component>
+  </Fragment>
+</Wix>

@@ -240,3 +240,7 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
+
+# Apache Stuff and PHP
+Apache/
+Php/

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+
+
+  <Product Id="*"
+           Name="Recovery Case Manager"
+           Language="1033"
+           Version="1.0.0.0"
+           Manufacturer="iAutomate"
+           UpgradeCode="ce7d3464-2bf9-48a0-8118-d3f72b2412ec">
+
+
+    <Package InstallerVersion="200"
+              Compressed="yes"
+              InstallScope="perMachine" />
+
+    <!-- Insure we embed cab files inside the MSI. -->
+    <MediaTemplate EmbedCab="yes"/>
+
+    <MajorUpgrade
+      DowngradeErrorMessage="A newer version of Recovery Case Manager is already installed." />
+
+    <!-- Step 1: Define the directory structure -->
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ApplicationRootDirectory" Name="Iag">
+        <Directory Id="ApplicationApacheDirectory" Name="apache" />
+        <Directory Id="ApplicationPhpDirectory" Name="php"/>
+      </Directory>
+    </Directory>
+
+
+    
+
+    <!-- Step 3: Tell WiX to install the files -->
+    <Feature Id="MainApplication" Title="Main Application" Level="1">
+      <!-- <ComponentGroupRef Id="ApacheFilesGroup" /> -->
+      <!-- <ComponentGroupRef Id="PhpFilesGroup" /> -->
+      <!-- Remove envVariables -->
+      <ComponentRef Id="envVarActions" />
+      
+      
+      <!-- Only calling this for tests. -->
+      <ComponentRef Id="CreateFolder" />
+    </Feature>
+  </Product>
+  
+  <Fragment>
+    <Component Id="CreateFolder" Guid="{317767C2-49E8-4FFF-9F58-63580313886D}" Directory="ApplicationPhpDirectory">
+      <File Id="filB80BE5CC4BB848AF7376AADB44EAFE74" KeyPath="yes" Source="yup.txt" />
+    </Component>    
+  </Fragment>
+
+</Wix>
+

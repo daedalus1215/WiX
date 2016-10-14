@@ -1,18 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-	<Bundle Name="FirstBootstrapBundle" Version="1.0.0.0" Manufacturer="" UpgradeCode="30ae5d19-2ceb-4f6b-81b0-33110eef25b6">
-		<BootstrapperApplicationRef Id="WixStandardBootstrapperApplication.RtfLicense" />
-
-		<Chain>
-			<!-- TODO: Define the list of chained packages. -->
-			<!-- <MsiPackage SourceFile="path\to\your.msi" /> -->
-		</Chain>
-	</Bundle>
-
-  <!-- Required by the burn engine. -->
-  <Fragment>
-    <BootstrapperApplication>
-      
-    </BootstrapperApplication>
-  </Fragment>
+  <Bundle Name="FirstBootstrapBundle" Version="1.0.0.0" Manufacturer="Attempts" UpgradeCode="30ae5d19-2ceb-4f6b-81b0-33110eef25b6">    
+    <BootstrapperApplicationRef Id="WixStandardBootstrapperApplication.RtfLicense" />
+      <Chain>
+        <MsiPackage SourceFile="FirstAttemptForAIG.msi">
+          <MsiProperty Name="INSTALLFOLDER" Value='INSTALLDIR' />
+        </MsiPackage>
+    </Chain>   
+  </Bundle>
 </Wix>

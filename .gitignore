@@ -242,5 +242,10 @@ ModelManifest.xml
 .fake/
 
 # Apache Stuff and PHP
-Apache/
-Php/
+[Aa]pache/
+[Pp]hp/
+
+# packages I make
+[Bb]in/
+*.exe
+*.msi

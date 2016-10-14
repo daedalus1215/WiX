@@ -8,4 +8,11 @@
 			<!-- <MsiPackage SourceFile="path\to\your.msi" /> -->
 		</Chain>
 	</Bundle>
+
+  <!-- Required by the burn engine. -->
+  <Fragment>
+    <BootstrapperApplication>
+      
+    </BootstrapperApplication>
+  </Fragment>
 </Wix>

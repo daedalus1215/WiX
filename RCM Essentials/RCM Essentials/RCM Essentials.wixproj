@@ -21,6 +21,8 @@
     <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="ApacheFile.wxs" />
+    <Compile Include="PhpFile.wxs" />
     <Compile Include="Product.wxs" />
   </ItemGroup>
   <Import Project="$(WixTargetsPath)" />

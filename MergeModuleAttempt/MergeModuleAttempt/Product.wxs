@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Product Id="*" Name="MergeModuleAttempt" Language="1033" Version="1.0.0.0" Manufacturer="Attempts" UpgradeCode="8ee6b2af-b84b-4691-b58f-bb14a4c13616">
+		<Package InstallerVersion="301" Compressed="yes" InstallScope="perMachine" Platforms="x64"/>
+
+		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+		<MediaTemplate EmbedCab="yes"/>
+
+    <!-- Step 1: Define the directory structure -->
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ApplicationRootDirectory" Name="Iag">
+      </Directory>
+    </Directory>
+    
+
+
+    <!-- product -->
+    <Feature Id="ProductFeature" Title="MergeModuleAttempt" Level="2">
+      <ComponentRef Id="ProductComponents" />
+    </Feature>
+  </Product>
+
+  
+	<Fragment>
+		<Component Id="ProductComponents" Guid="{A404A63E-5A4A-477E-959B-C8086B4425DE}"  Directory="ApplicationRootDirectory">
+      <File Id="FILE_InstallMeTXT"
+            Source="InstallMe.txt"
+            KeyPath="yes"/>
+		</Component>
+	</Fragment>
+</Wix>

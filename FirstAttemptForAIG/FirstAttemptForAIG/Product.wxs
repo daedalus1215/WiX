@@ -41,9 +41,9 @@
       <ComponentGroupRef Id="PhpFilesGroup" /> 
       <ComponentRef Id="phpToEnvVar" />
     </Feature>
-
     
     
   </Product>  
+  
 </Wix>
 

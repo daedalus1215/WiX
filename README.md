@@ -1,2 +1,2 @@
 # WiX
-WiX Tool working on an installer
+WiX Tool working on an installer.

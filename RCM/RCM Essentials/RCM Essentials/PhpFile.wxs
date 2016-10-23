@@ -1,0 +1,335 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+    <Fragment>
+        <DirectoryRef Id="ApplicationPhpDirectory">
+            <Directory Id="dir70409B20DD230304A64B750C19323D95" Name="dev" />
+            <Directory Id="dirFAE1B4EEB61C8B2D286C694F0A17AF3D" Name="ext" />
+            <Directory Id="dirDABE28A6579C01DDFCEB4DECAFEA7866" Name="extras" />
+            <Directory Id="dirF72838C35656A854BD9E78DEFE377913" Name="lib" />
+            <Directory Id="dir54E6D003C6C1B6CDD1271F949C953C1E" Name="sasl2" />
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <ComponentGroup Id="PhpFilesGroup">
+            <Component Id="cmp7D8CCFA65771DD91B0BED652059D78CF" Directory="ApplicationPhpDirectory" Guid="7BC2FE33-B84C-412E-9156-BA996E7979AB">
+                <File Id="filB80BE5CC4BB848AF7376AADB44EAFE74" KeyPath="yes" Source="requisites\php\deplister.exe" />
+            </Component>
+            <Component Id="cmp3BAD0869FD9C0DF5A676F05F8F396226" Directory="ApplicationPhpDirectory" Guid="66CA7CAF-51FA-4CBF-89FB-150C3D88DEFB">
+                <File Id="fil0153FD807991715B9E0F093072276174" KeyPath="yes" Source="requisites\php\glib-2.dll" />
+            </Component>
+            <Component Id="cmp4D058880FDC3026E04D9887B97DF9EF8" Directory="ApplicationPhpDirectory" Guid="C35B7D30-3598-4531-BCC7-57F808310A19">
+                <File Id="fil545C175597830CF83318D79AA7C62FA1" KeyPath="yes" Source="requisites\php\gmodule-2.dll" />
+            </Component>
+            <Component Id="cmp00D33F695758041A24C2ACE1405741F1" Directory="ApplicationPhpDirectory" Guid="C81AF58F-C0C2-4481-A24A-DCF37BDCD75A">
+                <File Id="fil92561BB55725B26473861086A3FC32F3" KeyPath="yes" Source="requisites\php\go-pear.phar" />
+            </Component>
+            <Component Id="cmp59FDE1D8E7F71C3136CA371D56E12D40" Directory="ApplicationPhpDirectory" Guid="69D0AAF3-9528-47EC-8280-477506D8B91E">
+                <File Id="fil0CF932E66D9E5A34E130846F9F9F6B9E" KeyPath="yes" Source="requisites\php\icudt57.dll" />
+            </Component>
+            <Component Id="cmp85131DAA56F444EBD3D2BA94FA30B003" Directory="ApplicationPhpDirectory" Guid="D2EA7F8F-429A-4E86-8CC9-854EA6F48368">
+                <File Id="filE402DDCD4ABF94257AB91FC5BBADE800" KeyPath="yes" Source="requisites\php\icuin57.dll" />
+            </Component>
+            <Component Id="cmpFEA18FD6847BC907BFF9C9025DBE224E" Directory="ApplicationPhpDirectory" Guid="081D1924-2DB7-4989-B904-9F26154AED48">
+                <File Id="filCD4F52AF80EB579C46768318FEE3FEB2" KeyPath="yes" Source="requisites\php\icuio57.dll" />
+            </Component>
+            <Component Id="cmpD142FDCBB00793EDF21A6B19038324A5" Directory="ApplicationPhpDirectory" Guid="B82C9C40-94C4-4CC1-ACDE-6AB9868979AE">
+                <File Id="fil599DD0A79D0928559C821D05A99EA437" KeyPath="yes" Source="requisites\php\icule57.dll" />
+            </Component>
+            <Component Id="cmp1365CE63DDA1C3695F863E76A172A20D" Directory="ApplicationPhpDirectory" Guid="9A457329-2D3C-45F0-8B02-DB9DEFD1F5FD">
+                <File Id="filA05D22ADBD55BD1C17FB0B5780100C1C" KeyPath="yes" Source="requisites\php\iculx57.dll" />
+            </Component>
+            <Component Id="cmp61BB10CD44BAED0FA3EEAA7485F9A246" Directory="ApplicationPhpDirectory" Guid="46BBB990-4595-41A3-A1CD-E9EB3327FF0F">
+                <File Id="fil8DE64EF7A270E4D9C845C72609838BB3" KeyPath="yes" Source="requisites\php\icuuc57.dll" />
+            </Component>
+            <Component Id="cmp7975A43F89F086E54E2CB6A738B45E81" Directory="ApplicationPhpDirectory" Guid="394255AD-0C61-411F-A7A1-7D3C860A2FE3">
+                <File Id="filCAC3396ECA4DC3DAC909051FD891D82D" KeyPath="yes" Source="requisites\php\install.txt" />
+            </Component>
+            <Component Id="cmp7A10BD859686A0762009AE872D5C2401" Directory="ApplicationPhpDirectory" Guid="AC0ECB9B-402C-4C57-AA16-7880C374EE32">
+                <File Id="fil94EBCE4D8E77890AAA7F9ECC5EB05B45" KeyPath="yes" Source="requisites\php\libeay32.dll" />
+            </Component>
+            <Component Id="cmpB8B1FCDC426EE428DC167D6E9CE39B70" Directory="ApplicationPhpDirectory" Guid="A61810C7-B722-418E-AD2F-B58D858EB06C">
+                <File Id="fil087324E4B11074527FC5BE897CDE15EE" KeyPath="yes" Source="requisites\php\libenchant.dll" />
+            </Component>
+            <Component Id="cmp6E904B991679E6F1108675E712907BEC" Directory="ApplicationPhpDirectory" Guid="215464DD-4177-48F8-9EED-D7FE5A5EF7FB">
+                <File Id="fil4F7F63AEC6AEC771DACF1449CC42915A" KeyPath="yes" Source="requisites\php\libpq.dll" />
+            </Component>
+            <Component Id="cmp93097AD27BCD26B28FEA207E41E0904C" Directory="ApplicationPhpDirectory" Guid="7E032BED-41F1-45BF-B291-CBF4EDC4D9B9">
+                <File Id="fil4DA84B19AA2BFD3EB7FB1C2468575D1E" KeyPath="yes" Source="requisites\php\libsasl.dll" />
+            </Component>
+            <Component Id="cmp1E365B5369B395D4CC774C2F06A4CC60" Directory="ApplicationPhpDirectory" Guid="9BF63E25-54EF-44C2-A2BF-8B7D7EA9DC94">
+                <File Id="fil24249781CAAA40108AE287CA22C17BF6" KeyPath="yes" Source="requisites\php\libssh2.dll" />
+            </Component>
+            <Component Id="cmpDFADC7DF29FED2B21E1D6E015A79CC9B" Directory="ApplicationPhpDirectory" Guid="777BE959-3FE3-459E-8C12-A3551C361334">
+                <File Id="fil9EB391BDDE0E3414159F21E78222F579" KeyPath="yes" Source="requisites\php\license.txt" />
+            </Component>
+            <Component Id="cmp57D88169259500F0AC7205A18549CE8A" Directory="ApplicationPhpDirectory" Guid="50E74908-DF18-4408-B609-620A840736B5">
+                <File Id="fil14DAD19522605F1167F9682F55904C13" KeyPath="yes" Source="requisites\php\news.txt" />
+            </Component>
+            <Component Id="cmp3748A522BDCD8835E9FC151C978C2EF3" Directory="ApplicationPhpDirectory" Guid="7FE0D44D-A058-4237-9104-A7D8C33116F0">
+                <File Id="filEFB6917F78A149D263863F859A55EB9E" KeyPath="yes" Source="requisites\php\phar.phar.bat" />
+            </Component>
+            <Component Id="cmp718D0CA92BAABCD5F3BF1F6EF7E2EC75" Directory="ApplicationPhpDirectory" Guid="4C0B0B0E-86C4-4D5F-A7A9-B34A773F85E4">
+                <File Id="filB5A09D75BEE36766C585E18CF3B4E3BF" KeyPath="yes" Source="requisites\php\pharcommand.phar" />
+            </Component>
+            <Component Id="cmp80EE3338A6A2F02AE158C924156290D0" Directory="ApplicationPhpDirectory" Guid="21835CB5-891E-4289-B6A0-B81825142F46">
+                <File Id="fil466D9DB9EF540A2C08A1D9CB2E400D5B" KeyPath="yes" Source="requisites\php\php-cgi.exe" />
+            </Component>
+            <Component Id="cmp22F30B90E35FEE02450EE69CD34CF0CC" Directory="ApplicationPhpDirectory" Guid="9FC682F2-881B-40B7-AE43-8A15A670B772">
+                <File Id="filB061E17B918F9D2011760C4865E39A30" KeyPath="yes" Source="requisites\php\php-win.exe" />
+            </Component>
+            <Component Id="cmp0B11562B280906B92B5EA1096175D60D" Directory="ApplicationPhpDirectory" Guid="5F6D5887-03EB-434D-A5D1-636F5D9F201B">
+                <File Id="fil311039526DC610506472BF489DE82250" KeyPath="yes" Source="requisites\php\php.exe" />
+            </Component>
+            <Component Id="cmp3C62C1AA8347E01820B5E66E7F83F6BE" Directory="ApplicationPhpDirectory" Guid="E379D3A0-EEFE-4FA7-B560-DA7044EBF267">
+                <File Id="fil4179B7B8B2F1BA4105B058D45D1FB1BE" KeyPath="yes" Source="requisites\php\php.gif" />
+            </Component>
+            <Component Id="cmp91863FE1A8BF87AFBBAFC9967B044DAC" Directory="ApplicationPhpDirectory" Guid="826B80B4-1225-459A-B010-FE33F077B115">
+                <File Id="fil5A443734A7E35E9B9287727AD5B66AC9" KeyPath="yes" Source="requisites\php\php.ini" />
+            </Component>
+            <Component Id="cmp04D163F215CB28FCF8C1332F42AC8A86" Directory="ApplicationPhpDirectory" Guid="2A550309-7670-4DCC-A11A-DA97A27B1638">
+                <File Id="filA645B9AD088AE0C642CEC9FF4E5B25AF" KeyPath="yes" Source="requisites\php\php.ini-production" />
+            </Component>
+            <Component Id="cmpCC92CA764832BE38E7F6BEDD9C24C786" Directory="ApplicationPhpDirectory" Guid="28806792-4108-4544-8CF2-1F8BFDB7A1CD">
+                <File Id="fil183FC64592D1C0761658948758272170" KeyPath="yes" Source="requisites\php\php7.dll" />
+            </Component>
+            <Component Id="cmpEDCAF6342C0861211CFDB2B239C07927" Directory="ApplicationPhpDirectory" Guid="8A76EEBE-0FA4-465E-8054-71F86E652894">
+                <File Id="fil46F19B74BEF4C6262F4AC87D49390FFD" KeyPath="yes" Source="requisites\php\php7embed.lib" />
+            </Component>
+            <Component Id="cmp5D2F89FCF736085F16432168E4A620F7" Directory="ApplicationPhpDirectory" Guid="B764336C-38D6-431C-A8C9-598140016DE5">
+                <File Id="fil9619ADFEC31780DFC7D0878B8AF9946A" KeyPath="yes" Source="requisites\php\php7phpdbg.dll" />
+            </Component>
+            <Component Id="cmpB7D32C235303180073141DA07EFA1CEE" Directory="ApplicationPhpDirectory" Guid="C5A8CD25-23B4-4398-A142-E5CC7BF92E64">
+                <File Id="fil9E066B9B4EA3C74F6B4B6F226B73E951" KeyPath="yes" Source="requisites\php\phpdbg.exe" />
+            </Component>
+            <Component Id="cmp19FB313E8DCFBD661EF1AD4C4DED75B0" Directory="ApplicationPhpDirectory" Guid="44B77F0F-11B9-4395-97DB-008EF4608235">
+                <File Id="fil926D6E101F4CF881E4D32FB4904CD056" KeyPath="yes" Source="requisites\php\readme-redist-bins.txt" />
+            </Component>
+            <Component Id="cmp8DAF1E3070ACBE4614F7E36D1B6DDDC6" Directory="ApplicationPhpDirectory" Guid="74852306-7930-476A-BE08-7CB5968B9C73">
+                <File Id="fil2F303595EB02FA8B1B8C7F72E1DC148A" KeyPath="yes" Source="requisites\php\snapshot.txt" />
+            </Component>
+            <Component Id="cmp8EC8A9647449DEAA4C3C8B1BC952D067" Directory="ApplicationPhpDirectory" Guid="9140B6A9-9832-49BB-B817-1F14EB72FE1F">
+                <File Id="filD3C92F62D058D9841D52A000DB82FAF2" KeyPath="yes" Source="requisites\php\ssleay32.dll" />
+            </Component>
+            <Component Id="cmpB0DA3A612F4306CBBF39037EC30B3F43" Directory="dir70409B20DD230304A64B750C19323D95" Guid="DF23BA19-8D2B-4170-8DFE-C521B993AF9B">
+                <File Id="fil5F529A9F2DF5EFC6F2E2DCAD084DF04D" KeyPath="yes" Source="requisites\php\dev\php7.lib" />
+            </Component>
+            <Component Id="cmpE7EA14ED1D727D7E8C0A9B3AC0EE2998" Directory="dirFAE1B4EEB61C8B2D286C694F0A17AF3D" Guid="CE6E6611-5E73-4664-87D6-B7C778D10157">
+                <File Id="fil35A08C0B1EB75773FD2F6AEF58BB7AD3" KeyPath="yes" Source="requisites\php\ext\composer.json" />
+            </Component>
+            <Component Id="cmpDD9A2DBFD4F7586B5F424CC134FDF5F8" Directory="dirFAE1B4EEB61C8B2D286C694F0A17AF3D" Guid="5DF2568D-F771-4212-91A2-F4E351BD3363">
+                <File Id="filBBA3E6BA52F54FEF14B43C2D6EACFA29" KeyPath="yes" Source="requisites\php\ext\CREDITS" />
+            </Component>
+            <Component Id="cmpCAB9F9B3EBDF2BE10E64BDDE5F236579" Directory="dirFAE1B4EEB61C8B2D286C694F0A17AF3D" Guid="2D000169-C39C-44C7-8FEC-665B6D3EF414">
+                <File Id="fil4021B23AB3BB6B6146F14883C8FB3098" KeyPath="yes" Source="requisites\php\ext\LICENSE" />
+            </Component>
+            <Component Id="cmp05ABCEC3F664F5F893E1B82D24E6A828" Directory="dirFAE1B4EEB61C8B2D286C694F0A17AF3D" Guid="1E945EE3-6A1B-4717-8708-03051E6D414C">
+                <File Id="fil540F190E79392D8743A70A573960A8E2" KeyPath="yes" Source="requisites\php\ext\php_bz2.dll" />
+            </Component>
+            <Component Id="cmpD252667E37354EFB8B9617530AEDC328" Directory="dirFAE1B4EEB61C8B2D286C694F0A17AF3D" Guid="8A039D26-98CA-4F0E-B407-E5A726648034">
+                <File Id="fil0998EC146C2DA8B6186EC0A0A102174A" KeyPath="yes" Source="requisites\php\ext\php_com_dotnet.dll" />
+            </Component>
+            <Component Id="cmpC7863A2F3B46A581C338D77AE55C595A" Directory="dirFAE1B4EEB61C8B2D286C694F0A17AF3D" Guid="752EA9ED-2CDF-44FF-8CE9-8E74334CB520">
+                <File Id="fil191760012E97449B436D773C3C80C580" KeyPath="yes" Source="requisites\php\ext\php_curl.dll" />
+            </Component>
+            <Component Id="cmp982AD381EDF991D234E695B75AF38BCB" Directory="dirFAE1B4EEB61C8B2D286C694F0A17AF3D" Guid="E326BB13-0EBA-4949-9926-E8D79918DBE2">
+                <File Id="fil3E2CF66AF32FB1F98B4B48FF3371631D" KeyPath="yes" Source="requisites\php\ext\php_doublemetaphone.dll" />
+            </Component>
+            <Component Id="cmp6CE348D8BB69D1438907CBA8846DAD45" Directory="dirFAE1B4EEB61C8B2D286C694F0A17AF3D" Guid="F024C397-DC00-4498-9355-293A87E45E68">
+                <File Id="filEC5536E3B138C9EA9A65DF657EBBEE06" KeyPath="yes" Source="requisites\php\ext\php_doublemetaphone.pdb" />
+            </Component>
+            <Component Id="cmpFF8817DF1F525B4433C15762EA32446C" Directory="dirFAE1B4EEB61C8B2D286C694F0A17AF3D" Guid="3F339A4A-F177-4C60-B39E-76B9D151B8F0">
+                <File Id="filBA516598A4E158FC33B246BB60728547" KeyPath="yes" Source="requisites\php\ext\php_enchant.dll" />
+            </Component>
+            <Component Id="cmp1058C144A0389679D7FADFD402A5EFD3" Directory="dirFAE1B4EEB61C8B2D286C694F0A17AF3D" Guid="B3FBB1CF-DBB7-432A-B169-2D5ACBDFCC5E">
+                <File Id="filB9A7B3C8513DA8A6D67DF40473994DE7" KeyPath="yes" Source="requisites\php\ext\php_exif.dll" />
+            </Component>
+            <Component Id="cmpE8A2E129299F7B7C852FF2EC793199EC" Directory="dirFAE1B4EEB61C8B2D286C694F0A17AF3D" Guid="8DD716D6-13C8-4355-89CD-488D4CBFE61B">
+                <File Id="filC57A9964E47FFBAEF2E7DA86A860BEB3" KeyPath="yes" Source="requisites\php\ext\php_fileinfo.dll" />
+            </Component>
+            <Component Id="cmp8BD90B0AC85C57BA63D0ACDE8D51249C" Directory="dirFAE1B4EEB61C8B2D286C694F0A17AF3D" Guid="746AA364-9DCE-4DE4-A6F8-7137C90863C0">
+                <File Id="filEB76831B1F4FACA08B40FBE948E6B6DC" KeyPath="yes" Source="requisites\php\ext\php_ftp.dll" />
+            </Component>
+            <Component Id="cmpE949D50CEDB03E9B8CDCBE9A90E72D29" Directory="dirFAE1B4EEB61C8B2D286C694F0A17AF3D" Guid="C03CF7DB-5334-46A0-8032-2968A8E60421">
+                <File Id="filF2223A44C2D6912469552864CBC2E009" KeyPath="yes" Source="requisites\php\ext\php_gd2.dll" />
+            </Component>
+            <Component Id="cmp0049AC1C8BBCF39C4850EF0E40BD2D88" Directory="dirFAE1B4EEB61C8B2D286C694F0A17AF3D" Guid="F2E1C20A-30CF-499E-9A1E-BCBC8B3B3BD2">
+                <File Id="fil4C6E01E6122081C50647D936F5C02DA9" KeyPath="yes" Source="requisites\php\ext\php_gettext.dll" />
+            </Component>
+            <Component Id="cmpE7D5B62281D1163F03AC7E89D72BC3A9" Directory="dirFAE1B4EEB61C8B2D286C694F0A17AF3D" Guid="E1FE17D7-5C4E-4118-8CBB-EFB5A0F9D591">
+                <File Id="fil6A5ECDDEADC9CE345760B27C3332423D" KeyPath="yes" Source="requisites\php\ext\php_gmp.dll" />
+            </Component>
+            <Component Id="cmpD4AEA859479597AB017BC128D227673B" Directory="dirFAE1B4EEB61C8B2D286C694F0A17AF3D" Guid="CC42656A-F758-4F61-8F08-C1244496A9C5">
+                <File Id="filB7061641CD5EA0A68EDB61BF3BD992EF" KeyPath="yes" Source="requisites\php\ext\php_imagick.dll" />
+            </Component>
+            <Component Id="cmpBA4961F0626165C75EEA28B59CB259B5" Directory="dirFAE1B4EEB61C8B2D286C694F0A17AF3D" Guid="20A84290-30E5-486B-B7A4-C776ECE17AE4">
+                <File Id="fil5CE4A8046C5DCEE51F7DEB469D62CE49" KeyPath="yes" Source="requisites\php\ext\php_imap.dll" />
+            </Component>
+            <Component Id="cmpBD5072BD44590D803309FAB7D3E6819E" Directory="dirFAE1B4EEB61C8B2D286C694F0A17AF3D" Guid="EDEB73D3-1E64-4567-BA5D-7BF4F16B5DC3">
+                <File Id="fil64EC1F35497333DA1635DA3355517536" KeyPath="yes" Source="requisites\php\ext\php_interbase.dll" />
+            </Component>
+            <Component Id="cmpABF447591061A25BC8FF84417D31BA8C" Directory="dirFAE1B4EEB61C8B2D286C694F0A17AF3D" Guid="B909E450-5C7C-4261-AE76-4CA237C35997">
+                <File Id="fil330F9471A724256DF25B6567F1F72A25" KeyPath="yes" Source="requisites\php\ext\php_intl.dll" />
+            </Component>
+            <Component Id="cmp4B685B1BADBB843B06C5DF8A40750A89" Directory="dirFAE1B4EEB61C8B2D286C694F0A17AF3D" Guid="38DAB8F7-D136-409F-A210-42D85A975F2E">
+                <File Id="fil4439B573701E62EDC116C4F5A4F4220F" KeyPath="yes" Source="requisites\php\ext\php_ldap.dll" />
+            </Component>
+            <Component Id="cmp039317F29D3CEBAA693DCB0D2BEE07E5" Directory="dirFAE1B4EEB61C8B2D286C694F0A17AF3D" Guid="A514FFC4-58F2-459C-89C3-25FC8D59E717">
+                <File Id="fil99621EA6A40C3DEFE662B5C1FAEF8F24" KeyPath="yes" Source="requisites\php\ext\php_mbstring.dll" />
+            </Component>
+            <Component Id="cmp69DED12E16E4B554BC8F5B9D07C62840" Directory="dirFAE1B4EEB61C8B2D286C694F0A17AF3D" Guid="363EA0BD-301C-41DD-9D9A-CB505D70F50D">
+                <File Id="filFB0655D797A2CBD92583FA765CADA5FE" KeyPath="yes" Source="requisites\php\ext\php_mysqli.dll" />
+            </Component>
+            <Component Id="cmp153DD88E5169670E18492C96C4A55A15" Directory="dirFAE1B4EEB61C8B2D286C694F0A17AF3D" Guid="5AF0122B-8006-4927-B59E-E3DB100171A0">
+                <File Id="filF2C68C9C4CF2C9F354BAB644982A25ED" KeyPath="yes" Source="requisites\php\ext\php_oci8.dll" />
+            </Component>
+            <Component Id="cmp8E0F8B4F86FCE7F08487C13A13162BAF" Directory="dirFAE1B4EEB61C8B2D286C694F0A17AF3D" Guid="13527E8F-9C61-4350-A536-CFDDB79D3E2D">
+                <File Id="filD7BEFAD29302FCA7F4104D7CBFA81165" KeyPath="yes" Source="requisites\php\ext\php_oci8.pdb" />
+            </Component>
+            <Component Id="cmp7B12A1C6ADE6ACC1228D1D7D2B7FDAE4" Directory="dirFAE1B4EEB61C8B2D286C694F0A17AF3D" Guid="9D6CF0C3-0460-463A-B513-4F9FC9F8DEFA">
+                <File Id="filD2D433874711D28E20B398792F60DAB5" KeyPath="yes" Source="requisites\php\ext\php_oci8_11g.dll" />
+            </Component>
+            <Component Id="cmp9241A5ED83028A495F8B4E3D0966009E" Directory="dirFAE1B4EEB61C8B2D286C694F0A17AF3D" Guid="F35A8F54-81A9-49EF-AA95-2C647D3A369E">
+                <File Id="filBDA229612B6CC09A9DE9F8EBC02A2D51" KeyPath="yes" Source="requisites\php\ext\php_oci8_11g.pdb" />
+            </Component>
+            <Component Id="cmp152A7229B865DC7FA7CFE1FC89AEAD1C" Directory="dirFAE1B4EEB61C8B2D286C694F0A17AF3D" Guid="790FB1C4-CD54-4D40-9C52-6A9ED59A53B7">
+                <File Id="fil8F66D493120F2111C11BF890D49D25EC" KeyPath="yes" Source="requisites\php\ext\php_oci8_12c.dll" />
+            </Component>
+            <Component Id="cmp7DB805DDE980D4301A5C0E66FDEFFAC5" Directory="dirFAE1B4EEB61C8B2D286C694F0A17AF3D" Guid="D3CBA932-7E72-4FF9-9250-294426B1AA03">
+                <File Id="fil33D1FF43412C44BE9BC0C4E3E5BD31BF" KeyPath="yes" Source="requisites\php\ext\php_oci8_12c.pdb" />
+            </Component>
+            <Component Id="cmp49C4D1152A3C1511358634AA9527B454" Directory="dirFAE1B4EEB61C8B2D286C694F0A17AF3D" Guid="5EE243A7-3FB3-4634-B475-23D4C1877A98">
+                <File Id="fil8DC571B395AD744B1F6DCB9C521FA0E3" KeyPath="yes" Source="requisites\php\ext\php_odbc.dll" />
+            </Component>
+            <Component Id="cmp12A26A6F941AA1F13E746603D5BB1A2E" Directory="dirFAE1B4EEB61C8B2D286C694F0A17AF3D" Guid="7618F173-7E24-4B9A-BFBE-D296068CA7A2">
+                <File Id="filD6A14080125AFF7D6AF0429CBEC7D429" KeyPath="yes" Source="requisites\php\ext\php_opcache.dll" />
+            </Component>
+            <Component Id="cmpF3A77A01D76E6B1F6D3916B8147C261F" Directory="dirFAE1B4EEB61C8B2D286C694F0A17AF3D" Guid="3377AC9C-8772-4159-8871-0A1BB3D42B0A">
+                <File Id="fil3F546C9048CBA65E70E5118697BBAEB3" KeyPath="yes" Source="requisites\php\ext\php_openssl.dll" />
+            </Component>
+            <Component Id="cmp00729F263EDE3C9ED5DB05B1823A5198" Directory="dirFAE1B4EEB61C8B2D286C694F0A17AF3D" Guid="F6768513-8412-46D8-B013-B8E594768A2D">
+                <File Id="fil7684D5D662E5AFDD9A85FC48AE6DD40E" KeyPath="yes" Source="requisites\php\ext\php_pdo_firebird.dll" />
+            </Component>
+            <Component Id="cmp80A010CD4FEF4125F33F9287400245B2" Directory="dirFAE1B4EEB61C8B2D286C694F0A17AF3D" Guid="4330110D-0EAC-4149-AC9D-502EDAF125BD">
+                <File Id="filFC7938FA3C5D483209135A0D8A2F9978" KeyPath="yes" Source="requisites\php\ext\php_pdo_mysql.dll" />
+            </Component>
+            <Component Id="cmp782E3441D60A6B4B83C66B6A0A13BB37" Directory="dirFAE1B4EEB61C8B2D286C694F0A17AF3D" Guid="5D46D18E-7955-4191-B73F-560F72F095B3">
+                <File Id="fil38856AD00F00162B28BC03B2AA41A259" KeyPath="yes" Source="requisites\php\ext\php_pdo_oci.dll" />
+            </Component>
+            <Component Id="cmpD1051662B5FABA9ADC9DEE54451D6A61" Directory="dirFAE1B4EEB61C8B2D286C694F0A17AF3D" Guid="CC15BEBC-CB7A-45F8-B4B6-31C495F893A4">
+                <File Id="fil3E7104E0FECEFDF0D4B0202ABD0B30FC" KeyPath="yes" Source="requisites\php\ext\php_pdo_odbc.dll" />
+            </Component>
+            <Component Id="cmp5D69BE5D05D1292AB893184D66734B60" Directory="dirFAE1B4EEB61C8B2D286C694F0A17AF3D" Guid="BA0BF8AC-95B8-437C-B6FB-D35ACB55AC05">
+                <File Id="fil14A544D61982E5FB147822315D9E652B" KeyPath="yes" Source="requisites\php\ext\php_pdo_pgsql.dll" />
+            </Component>
+            <Component Id="cmp0FB926EC7F27A030C5B4294CF3146303" Directory="dirFAE1B4EEB61C8B2D286C694F0A17AF3D" Guid="2BC2C542-BAF9-49E5-8535-8F3CCB73CAF0">
+                <File Id="fil2039EB334CEDF1F8CF3D6A63DD5CB131" KeyPath="yes" Source="requisites\php\ext\php_pdo_sqlite.dll" />
+            </Component>
+            <Component Id="cmpA87E3109C582602366A9A4E3DEE4F4F8" Directory="dirFAE1B4EEB61C8B2D286C694F0A17AF3D" Guid="FBF987CF-12FA-4285-91B7-88D779E04A47">
+                <File Id="filB895325FA18E475E17C63AA3325A3C14" KeyPath="yes" Source="requisites\php\ext\php_pdo_sqlsrv_7_nts_x64.dll" />
+            </Component>
+            <Component Id="cmpD0AC9DDA710379DF6D1956C49ABA16A3" Directory="dirFAE1B4EEB61C8B2D286C694F0A17AF3D" Guid="4999807E-F06D-4A9B-9B1E-548FEB743867">
+                <File Id="fil66F5BB176F37E6258ACA9084DD65AF19" KeyPath="yes" Source="requisites\php\ext\php_pgsql.dll" />
+            </Component>
+            <Component Id="cmpC8B999B61D290229F5B6291DE87975B8" Directory="dirFAE1B4EEB61C8B2D286C694F0A17AF3D" Guid="808A4306-C459-45A7-BED7-1FC08F98850F">
+                <File Id="filD89D10713A79D328DEF461D57993F0D3" KeyPath="yes" Source="requisites\php\ext\php_phpdbg_webhelper.dll" />
+            </Component>
+            <Component Id="cmp917EFD880364C9B41DD5440D2522FFF2" Directory="dirFAE1B4EEB61C8B2D286C694F0A17AF3D" Guid="B8733838-1F8F-4CEF-806A-F9ADD93C5129">
+                <File Id="fil915B4BAF250285324CDDB98C32F98EC5" KeyPath="yes" Source="requisites\php\ext\php_redis.dll" />
+            </Component>
+            <Component Id="cmpD928FAB80BCFE5D54B33CBD74D9839B6" Directory="dirFAE1B4EEB61C8B2D286C694F0A17AF3D" Guid="6AD86916-6D01-4CEC-B398-1CE226DAC1BD">
+                <File Id="fil8EFF3B32A6078A72B4D8566DDB1F30CC" KeyPath="yes" Source="requisites\php\ext\php_shmop.dll" />
+            </Component>
+            <Component Id="cmp6B94D6111C16ED41D8E4D191AFAF975C" Directory="dirFAE1B4EEB61C8B2D286C694F0A17AF3D" Guid="3A40D563-E409-4563-8718-609C8E301895">
+                <File Id="fil9841BD719412A2556D17D8F32785B389" KeyPath="yes" Source="requisites\php\ext\php_snmp.dll" />
+            </Component>
+            <Component Id="cmp230BC3071B03CC399557B22B7A8FDA54" Directory="dirFAE1B4EEB61C8B2D286C694F0A17AF3D" Guid="8AFC7485-7F06-4165-970A-C041EFE09DEB">
+                <File Id="filE6621273213B84FC80FD6B87BE14980F" KeyPath="yes" Source="requisites\php\ext\php_soap.dll" />
+            </Component>
+            <Component Id="cmpF89D759A291A3BE7884F58EC501F3C45" Directory="dirFAE1B4EEB61C8B2D286C694F0A17AF3D" Guid="04DF046D-04DC-479C-AB49-9C9E519A5398">
+                <File Id="fil9A2E95D8492A38741DEA5D70936CFF8C" KeyPath="yes" Source="requisites\php\ext\php_sockets.dll" />
+            </Component>
+            <Component Id="cmpDB81BA4B9EF89B113A9D7ACAA9808BA3" Directory="dirFAE1B4EEB61C8B2D286C694F0A17AF3D" Guid="F41FF04B-6FB5-4C63-B9D6-166CA89ACEA4">
+                <File Id="fil1F9D1D2964D523635692997C5FBE3E8E" KeyPath="yes" Source="requisites\php\ext\php_sqlite3.dll" />
+            </Component>
+            <Component Id="cmpA0578FDCBCC469A476327266D7C7F2D6" Directory="dirFAE1B4EEB61C8B2D286C694F0A17AF3D" Guid="B0322585-3C6D-46DD-A0F2-2AF647471491">
+                <File Id="filF7718A9D82204606461D26067AD893C9" KeyPath="yes" Source="requisites\php\ext\php_sqlsrv_7_nts_x64.dll" />
+            </Component>
+            <Component Id="cmpF2C402135977F1B2C7B66AA7F316600C" Directory="dirFAE1B4EEB61C8B2D286C694F0A17AF3D" Guid="D4270BFB-8270-43CD-ABF6-BF4A43A51783">
+                <File Id="filB20CE38513DCBB333839AF0305300E30" KeyPath="yes" Source="requisites\php\ext\php_sysvshm.dll" />
+            </Component>
+            <Component Id="cmp734F186EB2A7A64F00A28488605EC8CF" Directory="dirFAE1B4EEB61C8B2D286C694F0A17AF3D" Guid="7446F090-0E3D-4F3C-95EA-68EA9F5B6D90">
+                <File Id="fil9BC79BB6837FFFFDA26B4AA072F4E496" KeyPath="yes" Source="requisites\php\ext\php_tidy.dll" />
+            </Component>
+            <Component Id="cmp94E676C072F57A2749D9AA21EA573FF9" Directory="dirFAE1B4EEB61C8B2D286C694F0A17AF3D" Guid="FB36BD22-DFB4-4203-BBC5-65829E7D14CB">
+                <File Id="filAED16B14D7AD47654110B5929EED1BA6" KeyPath="yes" Source="requisites\php\ext\php_wincache.dll" />
+            </Component>
+            <Component Id="cmp255744C8B9E9FE16C791B50E9A457559" Directory="dirFAE1B4EEB61C8B2D286C694F0A17AF3D" Guid="0217107B-85F0-418C-8DE1-7B5418A8F471">
+                <File Id="fil5A977DF0D82EF89AF6CED30284C44529" KeyPath="yes" Source="requisites\php\ext\php_xdebug-2.4.1-7.0-vc14-nts-x86_64.dll" />
+            </Component>
+            <Component Id="cmp9F1D2F590E01F120D4AF5E7FFCA8C12F" Directory="dirFAE1B4EEB61C8B2D286C694F0A17AF3D" Guid="32FF93C4-04BC-4947-B3AB-7D96A3521566">
+                <File Id="fil686D9B22727FA5F924CE9DBDE8C49683" KeyPath="yes" Source="requisites\php\ext\php_xmlrpc.dll" />
+            </Component>
+            <Component Id="cmpD7A2981645D0DCBE300B29E6A1EC2D65" Directory="dirFAE1B4EEB61C8B2D286C694F0A17AF3D" Guid="F629B90A-D795-4DEA-88D8-63587D931BA4">
+                <File Id="fil04DE5916E2CBB5E899AFE59F5B988754" KeyPath="yes" Source="requisites\php\ext\php_xsl.dll" />
+            </Component>
+            <Component Id="cmp33B5F77455DD8910D63CA759D50B4CC7" Directory="dirFAE1B4EEB61C8B2D286C694F0A17AF3D" Guid="602A1235-2C31-4260-8267-FF6C9DC01E33">
+                <File Id="fil153E259AF18B93DBC7C01A1F058116D6" KeyPath="yes" Source="requisites\php\ext\README" />
+            </Component>
+            <Component Id="cmp73BB955FC532151C7C5274B2C34C2FD2" Directory="dirDABE28A6579C01DDFCEB4DECAFEA7866" Guid="12B0BC3C-2C3C-4C62-A878-314AD5ABAA80">
+                <File Id="fil535A474E0B8171BDD2945494CF0C5BFE" KeyPath="yes" Source="requisites\php\extras\full_php_browscap.ini" />
+            </Component>
+            <Component Id="cmp108791ACFA34DD20553CFD4EABCBC29B" Directory="dirDABE28A6579C01DDFCEB4DECAFEA7866" Guid="A9D571A9-8FB8-4395-AE0E-8045D8C944F3">
+                <File Id="fil80F47E13FC5580BCE3696586A3861A08" KeyPath="yes" Source="requisites\php\extras\php_browscap.ini" />
+            </Component>
+            <Component Id="cmpECECCCFF44F4F2CD9F2B540E97581B85" Directory="dirACC23EAE43D0C068259FA2C5D409C9C2" Guid="5AD465E6-7FC3-433D-894B-FD5A32EAA5FB">
+                <File Id="fil771B0380F28918C2B37E7EE956F6ED3A" KeyPath="yes" Source="requisites\php\extras\ssl\openssl.cnf" />
+            </Component>
+            <Component Id="cmp52C12E8BF01DBA602A6416BDF58DD6C5" Directory="dirDCD70B317DD8474D71E02595D52ACA76" Guid="0FB83890-9932-4F84-9DA2-81D38F46AC23">
+                <File Id="filD6FE1D380D539DC9FF2FF1C06A3D2A59" KeyPath="yes" Source="requisites\php\lib\enchant\libenchant_ispell.dll" />
+            </Component>
+            <Component Id="cmpD8CEC1D3052988DDD63076C34F69EF8B" Directory="dirDCD70B317DD8474D71E02595D52ACA76" Guid="C3274C8E-B61D-4B81-9F41-918335E95AD4">
+                <File Id="filF14E916E12A4CEE4671BB969E932FD11" KeyPath="yes" Source="requisites\php\lib\enchant\libenchant_myspell.dll" />
+            </Component>
+            <Component Id="cmp44C803B6828F97FDB2B6F1BCDA8EB0B1" Directory="dir54E6D003C6C1B6CDD1271F949C953C1E" Guid="4E352701-B218-43B4-87CD-AC257EB87912">
+                <File Id="fil3CB2D29088DEA7CE1D31A8BE7A939C0A" KeyPath="yes" Source="requisites\php\sasl2\saslANONYMOUS.dll" />
+            </Component>
+            <Component Id="cmp490CBAE11A4A631A15CE15304DE0A769" Directory="dir54E6D003C6C1B6CDD1271F949C953C1E" Guid="F6CB8F8C-BDE2-481C-95DD-0181ACCEAC46">
+                <File Id="fil339ED4965F91FC38E29B3DB324452B45" KeyPath="yes" Source="requisites\php\sasl2\saslCRAMMD5.dll" />
+            </Component>
+            <Component Id="cmp6F0AF4C98E3F11CF1FB7E9C71BF6BF67" Directory="dir54E6D003C6C1B6CDD1271F949C953C1E" Guid="A5C3C8E4-8FF5-4AD1-B3CA-294355FD0759">
+                <File Id="filB4AB30992CBEB293B4669F8BC04FDB35" KeyPath="yes" Source="requisites\php\sasl2\saslDIGESTMD5.dll" />
+            </Component>
+            <Component Id="cmpA7A1EB48508C24D8D06644AC07227891" Directory="dir54E6D003C6C1B6CDD1271F949C953C1E" Guid="962EA33E-FC1C-4E79-8B42-CD2844C69D74">
+                <File Id="filE53733F5B077CF6ECFEC789D941CAFC4" KeyPath="yes" Source="requisites\php\sasl2\saslLOGIN.dll" />
+            </Component>
+            <Component Id="cmpE79FC4ECC26A595D68FC576D4C64B6CE" Directory="dir54E6D003C6C1B6CDD1271F949C953C1E" Guid="6A3C22E6-8051-4098-AD6C-38EDEF42198B">
+                <File Id="filFD5779C9FB321E247ACF5FB60C1CF3ED" KeyPath="yes" Source="requisites\php\sasl2\saslNTLM.dll" />
+            </Component>
+            <Component Id="cmp9B16AB65D7F673761439DA67FE4776DB" Directory="dir54E6D003C6C1B6CDD1271F949C953C1E" Guid="ADF2BABF-D80A-40B5-AB48-1B9162F51D1C">
+                <File Id="fil40C7BC9451575285522975750FCCE2F6" KeyPath="yes" Source="requisites\php\sasl2\saslOTP.dll" />
+            </Component>
+            <Component Id="cmpE135CC7279FB3DF2EB5EBF5CA3B7725A" Directory="dir54E6D003C6C1B6CDD1271F949C953C1E" Guid="EE4C65BC-9FC0-47E4-A869-7FBA16DCC1C4">
+                <File Id="fil544E5BF80B7463618DE41C87FBB69B99" KeyPath="yes" Source="requisites\php\sasl2\saslPLAIN.dll" />
+            </Component>
+            <Component Id="cmpCC2ED11EFBDC24825B959D471B7413B6" Directory="dir54E6D003C6C1B6CDD1271F949C953C1E" Guid="F9ABB74D-5240-4845-A876-E5B58A0E87E7">
+                <File Id="fil263361C3F00988B116497140C4A407A0" KeyPath="yes" Source="requisites\php\sasl2\saslSCRAM.dll" />
+            </Component>
+            <Component Id="cmpDFA9DE86CE6FA5764B40630A361CBF34" Directory="dir54E6D003C6C1B6CDD1271F949C953C1E" Guid="C501770C-6C37-49EB-9C16-E730FA48BA5B">
+                <File Id="filD9BE3DC1AEB51A068BC2DC98656F788F" KeyPath="yes" Source="requisites\php\sasl2\saslSQLITE.dll" />
+            </Component>
+            <Component Id="cmp5E4D9BB5F3854BC5434C2512F839D6F4" Directory="dir54E6D003C6C1B6CDD1271F949C953C1E" Guid="D3356EB3-148E-4277-A4BB-3FC5337BBBBA">
+                <File Id="filB98E9FA3ED59B0150F4E0B4B317192C1" KeyPath="yes" Source="requisites\php\sasl2\saslSRP.dll" />
+            </Component>
+        </ComponentGroup>
+    </Fragment>
+    <Fragment>
+        <DirectoryRef Id="dirDABE28A6579C01DDFCEB4DECAFEA7866">
+            <Directory Id="dirACC23EAE43D0C068259FA2C5D409C9C2" Name="ssl" />
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <DirectoryRef Id="dirF72838C35656A854BD9E78DEFE377913">
+            <Directory Id="dirDCD70B317DD8474D71E02595D52ACA76" Name="enchant" />
+        </DirectoryRef>
+    </Fragment>
+</Wix>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Product Id="*" 
+           Name="ApacheService2nd" 
+           Language="1033" 
+           Version="1.0.0.0" 
+          Manufacturer="la" 
+          UpgradeCode="{E2902144-DE6C-482C-92D5-F331992D0EF0}">
+    
+    <Package  InstallerVersion="301"
+              Compressed="yes"
+              InstallScope="perMachine"
+              InstallPrivileges="elevated"/>
+
+		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+		<MediaTemplate EmbedCab="yes"/>
+
+
+
+
+    <!-- Root of our application directory structure -->
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ApplicationRootDirectory" Name="Iag">
+        <Directory Id="ApplicationApacheDirectory" Name="Apache" />
+      </Directory>
+    </Directory>
+
+
+    <!-- Apache environment variables-->
+    <Component Id="ApacheEnvVariable" 
+               Guid="{0A04D52C-86CC-437E-AADD-D4C615FEA71F}"
+               Directory="ApplicationRootDirectory">
+      <CreateFolder/>
+      <Environment Id="addApacheEnvVariable" 
+                   Name="IAG"
+                   Value="C:\iag\Apache\bin"
+                   Permanent="no"
+                   System="yes"
+                   Action="set"
+                   Part="last"/>
+    </Component>
+    
+    
+    <Feature Id="MainApplication" Title="ApacheService" Level="1">
+      <ComponentGroupRef Id="ApacheFilesGroup" />
+      <ComponentRef Id="ApacheEnvVariable"/>
+    </Feature>
+
+
+    <InstallExecuteSequence>
+      <Custom Action="installHttp" After="InstallInitialize" />
+      <Custom Action="startHttp" After="InstallInitialize" />
+    </InstallExecuteSequence>
+    
+    
+  </Product>
+
+  
+  
+  <Fragment>
+    <CustomAction Id="installHttp"
+                Directory="dirE48640D99CAF2CC8F12F346D465932BA"
+                Execute="commit"
+                Impersonate="no"
+                ExeCommand="cmd.exe /C C:\Iag\Apache\bin\httpd.exe -k install &amp; exit"
+                Return="ignore" />
+  </Fragment>
+  
+  <Fragment>
+    <CustomAction Id="startHttp"
+                  Directory="dirE48640D99CAF2CC8F12F346D465932BA"
+                  Execute="commit"
+                  Impersonate="no"                  
+                  ExeCommand="cmd.exe /C C:\Iag\Apache\bin\httpd.exe -k start &amp; exit"
+                  Return="ignore" />
+  </Fragment>
+  
+
+  
+</Wix>

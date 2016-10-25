@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-	<Bundle Name="ApachePhpRedisBootstrapped" Version="1.0.0.0" Manufacturer="" UpgradeCode="8e33bb15-41d3-405b-b277-228987559218">
+	<Bundle Name="ApachePhpRedisBootstrapped" Version="1.0.0.0" Manufacturer="la" UpgradeCode="8e33bb15-41d3-405b-b277-228987559218">
 		<BootstrapperApplicationRef Id="WixStandardBootstrapperApplication.RtfLicense" />
 
 		<Chain>
-			<!-- TODO: Define the list of chained packages. -->
-			<!-- <MsiPackage SourceFile="path\to\your.msi" /> -->
+      <ExePackage SourceFile="vc_redist.x64.exe" Compressed="yes" Vital="no" InstallCommand="/quiet"/>
+      <MsiPackage Id="ApachePhpServiceInstall" Compressed="yes" SourceFile="ApachePhpService.msi" Vital="yes"/>
+      <MsiPackage Id="RedisServiceInstall" Compressed="yes" SourceFile="Redis-x64-3.2.100.msi" DisplayInternalUI="yes" Vital="yes"/>
 		</Chain>
 	</Bundle>
 </Wix>

@@ -15,7 +15,7 @@
 
 
     
-    <!-- Create Link our environment variable (IAG) to PATH environment variable-->
+    <!-- Create Link our environment variable (IAG) to PATH environment variable. -->
     <Component Id="IagEnvVariable"
                Guid="{7F4D627F-FA85-46F4-81C3-6BCBD94DC31B}"
                Directory="ApplicationRootDirectory">
@@ -71,25 +71,27 @@
 		</Feature>		
   
     <!-- Install httpd service -->
-    <InstallExecuteSequence>      
-      <Custom Action="installHttpService" After="InstallInitialize" />
-      <Custom Action="startHttpService" After="InstallInitialize" />
-    </InstallExecuteSequence>        
+    <InstallExecuteSequence>
+      <Custom Action="removeApacheService" After="MsiUnpublishAssemblies">(NOT UPGRADINGPRODUCTCODE) AND (REMOVE="ALL")</Custom>
+      <Custom Action="installHttpService" After="InstallFinalize"/>
+      <Custom Action="startHttpService" After="installHttpService" />
+    </InstallExecuteSequence>         
 	</Product>
 
   
-  
-  
-  <!-- Services -->
-  <Fragment>    <!-- Not using this one -->
-    <CustomAction Id="removeHttpService"
-                  Directory="dirE48640D99CAF2CC8F12F346D465932BA"
-                  Execute="commit"
+  <Fragment>
+    <CustomAction Id="removeApacheService"
+                  Directory="ApplicationRootDirectory"
+                  Execute="immediate"
                   Impersonate="no"
-                  ExeCommand="cmd.exe /C httpd -k uninstall"
-                  Return="ignore"/>
+                  ExeCommand="cmd.exe /C httpd -k uninstall">
+      
+    </CustomAction>
   </Fragment>
-    
+  
+  
+  
+  <!-- Services -->    
   <Fragment>
     <CustomAction Id="installHttpService"
                   Directory="dirE48640D99CAF2CC8F12F346D465932BA"

@@ -252,3 +252,4 @@ requisite/
 [Bb]in/
 *.exe
 *.msi
+RcmFile.wxs

@@ -2,13 +2,20 @@
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
 	<Bundle Name="RCM_Upgrader" Version="1.0.0.0" Manufacturer="iAutomate" UpgradeCode="609046a4-8999-4552-8f3d-fdaa82a52cc6">
 		<BootstrapperApplicationRef Id="WixStandardBootstrapperApplication.RtfLicense" />
-
 		<Chain>
-      <ExePackage SourceFile="prerequisite packages\vc_redist.x64.exe" Compressed="yes" Vital="no" InstallCommand="/quiet"/>
-      <MsiPackage SourceFile="RCM_Essentials.msi" Compressed="yes" />            
-      <ExePackage SourceFile="prerequisite packages\ImageMagick-6.9.5-10-Q16-x64-dll.exe" Compressed="yes" Vital="yes" />
-      <MsiPackage Id="RedisServiceInstall" Compressed="yes" SourceFile="Redis-x64-3.2.100.msi" DisplayInternalUI="yes" Vital="yes"/>
+      <ExePackage Id="VisualStudio_C_Runtime10" SourceFile="prerequisite packages\vc_redist10.x64.exe" Compressed="yes" Vital="no" InstallCommand="/quiet"/>
+      <ExePackage Id="VisualStudio_C_Runtime14" SourceFile="prerequisite packages\vc_redist14.x64.exe" Compressed="yes" Vital="no" InstallCommand="/quiet"/>
       
+      <MsiPackage Id="Php" SourceFile="PhpInstall.msi" Compressed="yes" Vital="yes" />
+      <MsiPackage Id="Apache" SourceFile="ApacheInstall.msi" Compressed="yes" Vital="yes" />
+      
+      <MsiPackage Id="RCM" SourceFile="RCM_Essentials.msi" Compressed="yes" />
+      
+      <MsiPackage Id="OracleInstantClient" SourceFile="OracleInstantClient.msi" Compressed="yes" />
+    
+      <ExePackage Id="ImageMagick" SourceFile="prerequisite packages\ImageMagick-6.9.5-10-Q16-x64-dll.exe" Compressed="yes" Vital="yes" />
+      
+      <MsiPackage Id="RedisServiceInstall" Compressed="yes" SourceFile="prerequisite packages\Redis-x64-3.2.100.msi" DisplayInternalUI="yes" Vital="yes"/>
 		</Chain>
 	</Bundle>
 </Wix>

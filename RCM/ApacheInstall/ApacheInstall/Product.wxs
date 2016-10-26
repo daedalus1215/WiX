@@ -9,7 +9,6 @@
     <Directory Id="TARGETDIR" Name="SourceDir">
 		  <Directory Id="ApplicationRootDirectory" Name="Iag">
 			  <Directory Id="ApplicationApacheDirectory" Name="Apache" />
-      <Directory Id="ApplicationPhpDirectory" Name="Php" />
 		  </Directory>
 	  </Directory>
 

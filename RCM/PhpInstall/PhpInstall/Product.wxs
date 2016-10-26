@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Product Id="*" Name="ApachePhpService" Language="1033" Version="1.0.0.0" Manufacturer="LA" UpgradeCode="28278b21-9187-4abb-86f6-4cac661da6fb">
+    <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" InstallPrivileges="elevated" />
+
+    <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+    <MediaTemplate EmbedCab="yes"/>
+
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ApplicationRootDirectory" Name="Iag">        
+        <Directory Id="ApplicationPhpDirectory" Name="Php" />
+      </Directory>
+    </Directory>
+
+
+
+    <!-- Create Link our environment variable (IAG) to PATH environment variable. -->
+    <Component Id="evIAG" Guid="{7F4D627F-FA85-46F4-81C3-6BCBD94DC31B}" Directory="ApplicationRootDirectory">
+      <CreateFolder/>
+      <Environment Id="addIagEnvPathToPath"
+                   Name="PATH"
+                   Value="%IAG%"
+                   Permanent="no"
+                   Action="set"
+                   System="yes"
+                   Part="last"/>
+    </Component>
+
+
+    <!-- Create Php value in IAG environment variable -->
+    <Component Id="evPhp"
+               Guid="{7AAD529D-B178-4D4F-9A6B-2FDBDB57D3D3}"
+               Directory="ApplicationRootDirectory">
+      <CreateFolder/>
+      <Environment
+                  Id="addPhpEnvVar"
+                  Name="IAG"
+                  Value="C:\Iag\Php"
+                  Permanent="no"
+                  Action="set"
+                  System="yes"
+                  Part="last"/>
+    </Component>
+
+    <!-- Create PHPPATH environment variable - apparently it is required by wincache -->
+    <Component Id="evWincache"
+               Guid="{CD478AF0-53E3-4084-9D37-293C9EBD8C56}"
+               Directory="ApplicationRootDirectory">
+      <CreateFolder/>
+      <!-- 
+           When you go to run wincache70x86wpi.msi it wants to make sure that 
+           you have the correct environment variable (PHPPATH), so lets set it. 
+      -->
+      <Environment
+                  Id="addPHPPATHenvironmentVariable"
+                  Name="PHPPATH"
+                  Value="C:\Iag\Php"
+                  Permanent="no"
+                  Action="set"
+                  System="yes"
+                  Part="last"/>
+    </Component>
+
+
+    <!-- Main installation beginning. -->
+    <Feature Id="MainFeature" Title="ApachePhpService" Level="1">
+      <ComponentRef      Id="evIAG"/>
+
+      <ComponentGroupRef Id="PhpFilesGroup" />
+      <ComponentRef      Id="evPhp"/>
+      
+      
+      <ComponentRef      Id="evWincache" />
+    </Feature>
+
+    <!-- Install httpd service -->
+    <InstallExecuteSequence >      
+      <!-- Remove all directories under C:\Iag-->
+      <Custom Action="removeIag" After="DeleteServices">(NOT UPGRADINGPRODUCTCODE) AND (REMOVE="ALL")</Custom>
+    </InstallExecuteSequence>
+  </Product>
+
+
+
+  <!-- Remove Iag directory -->
+  <Fragment>
+    <CustomAction Id="removeIag"
+                  Directory="ApplicationRootDirectory"
+                  Execute="commit"
+                  Impersonate="no"
+                  ExeCommand="cmd.exe /C rd /S /Q C:\Iag"
+                  Return="ignore" />
+  </Fragment>
+</Wix>

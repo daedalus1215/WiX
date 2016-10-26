@@ -31,9 +31,9 @@
     <!-- Step 1: Define the directory structure -->
     <Directory Id="TARGETDIR" Name="SourceDir">
       <Directory Id="ApplicationRootDirectory" Name="Iag">
-        <Directory Id="ApplicationApacheDirectory" Name="Apache" />
-        <Directory Id="ApplicationPhpDirectory" Name="Php"/>
-        <Directory Id="ApplicationInstantClientDirectory" Name="instantclient_12_1"/>
+        <Directory Id="ApplicationApacheDirectory" Name="Apache">
+          <Directory Id="ApplicationHtdocsDirectory" Name="htdocs" />
+        </Directory>        
       </Directory>
     </Directory>
 
@@ -56,7 +56,7 @@
     <Feature Id="MainApplication" Title="Main Application" Level="1">            
       <!-- Remove EV Imagick -->
       <ComponentRef Id="evImagick"/>
-      
+      <ComponentGroupRef Id="RcmFilesGroup"/>
     </Feature>
 
 

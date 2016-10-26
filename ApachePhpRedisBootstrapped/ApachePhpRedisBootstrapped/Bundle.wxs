@@ -6,6 +6,7 @@
 		<Chain>
       <ExePackage SourceFile="vc_redist.x64.exe" Compressed="yes" Vital="no" InstallCommand="/quiet"/>
       <MsiPackage Id="ApachePhpServiceInstall" Compressed="yes" SourceFile="ApachePhpService.msi" Vital="yes"/>
+      <MsiPackage Id="InstantClientInstall" Compressed="yes" SourceFile="OracleInstantClient.msi" Vital="yes"/>
       <MsiPackage Id="RedisServiceInstall" Compressed="yes" SourceFile="Redis-x64-3.2.100.msi" DisplayInternalUI="yes" Vital="yes"/>
 		</Chain>
 	</Bundle>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Product Id="*" Name="OracleInstantClient" Language="1033" Version="1.0.0.0" Manufacturer="IAG" UpgradeCode="953c7c07-a96d-4579-8ccb-f2b96b8afbbf">
+    
+   
+    <Package  InstallerVersion="301"
+             Compressed="yes"
+             InstallScope="perMachine"
+             InstallPrivileges="elevated"/>
+
+    
+		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+    
+    
+    <!-- Insure we embed cab files inside the MSI. -->
+    <MediaTemplate EmbedCab="yes" CompressionLevel="high"/>
+
+  
+    
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ApplicationRootDirectory" Name="Iag">
+        <!-- Creating the directory below and using it as a reference for InstantClientFilesGroup. -->
+        <Directory Id="ApplicationInstantClient" Name="instantclient_12_1" />
+      </Directory>
+    </Directory>
+
+    
+    
+    
+		<Feature Id="OracleInstallFeature" Title="OracleInstantClient" Level="1">
+      <!-- Call the instant client group to stuff ApplicationInstantClient directory -->
+			<ComponentGroupRef Id="InstantClientFilesGroup" />
+      <!-- Remove and set instantclient -->
+      <ComponentRef Id="OracleInstantClientEnvVar"/>
+      
+		</Feature>
+
+	</Product>
+
+
+
+
+  <Fragment>
+    <!-- Kill old Oracle Instant Client env variable and set a new one -->
+    <Component Id="OracleInstantClientEnvVar" Guid="{91A777F2-DF3C-4F22-9538-7BFFCAF5BB3A}" Directory="ApplicationRootDirectory">
+      <CreateFolder/>
+      <Environment Id="removeOracleInstantClient" Name="PATH" Value="C:\instantclient_11_2" Permanent="no" Part="last" Action="remove" System="yes" />
+      <Environment Id="addOracleInstantClient"    Name="IAG" Value="C:\iag\instantclient_12_1" Permanent="no" Part="last" Action="set" System="yes" />
+    </Component>
+  </Fragment>
+</Wix>

@@ -4,11 +4,10 @@
 		<BootstrapperApplicationRef Id="WixStandardBootstrapperApplication.RtfLicense" />
 
 		<Chain>
-      
-      <MsiPackage SourceFile="RCM_Essentials.msi" Compressed="yes" />
-      
       <ExePackage SourceFile="prerequisite packages\vc_redist.x64.exe" Compressed="yes" Vital="no" InstallCommand="/quiet"/>
-      <ExePackage SourceFile="prerequisite packages\ImageMagick-6.9.5-10-Q16-x64-dll.exe" Compressed="yes" Vital="no" InstallCommand="/quiet" />
+      <MsiPackage SourceFile="RCM_Essentials.msi" Compressed="yes" />            
+      <ExePackage SourceFile="prerequisite packages\ImageMagick-6.9.5-10-Q16-x64-dll.exe" Compressed="yes" Vital="yes" />
+      <MsiPackage Id="RedisServiceInstall" Compressed="yes" SourceFile="Redis-x64-3.2.100.msi" DisplayInternalUI="yes" Vital="yes"/>
       
 		</Chain>
 	</Bundle>

@@ -244,6 +244,8 @@ ModelManifest.xml
 # Apache Stuff and PHP
 [Aa]pache/
 [Pp]hp/
+instantclient_12_1/
+
 
 # packages I make
 [Bb]in/

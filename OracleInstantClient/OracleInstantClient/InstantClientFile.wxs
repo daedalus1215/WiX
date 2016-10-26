@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+    <Fragment>
+        <DirectoryRef Id="ApplicationInstantClient">
+            <Directory Id="dirDA3C7BB10366C8E86F9042CDE789A2C4" Name="vc10" />
+            <Directory Id="dirFAE2ADB7ECE432A75BFD8AE9EBB17990" Name="vc11" />
+            <Directory Id="dir47BB6AB3552C5C835A9C52E7AA9006AB" Name="vc12" />
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <ComponentGroup Id="InstantClientFilesGroup">
+            <Component Id="cmp7397B196A7EB069673369CF54E7E0481" Directory="ApplicationInstantClient" Guid="011C1E77-E0C9-486B-B7ED-6F85B7B43FC9">
+                <File Id="filD9E5C7BC27A81DC1AE8807418E298AA3" KeyPath="yes" Source="requisite\instantclient_12_1\adrci.exe" />
+            </Component>
+            <Component Id="cmp3963353A5FAD65843AFF2CE512503D9A" Directory="ApplicationInstantClient" Guid="83CC3242-D528-4CBB-BE26-CCB0292A409B">
+                <File Id="fil49B6B6A4AE194ACAEE54D4D2E2431543" KeyPath="yes" Source="requisite\instantclient_12_1\adrci.sym" />
+            </Component>
+            <Component Id="cmpD38B10A2EC0F8FC44717711CAF500B7F" Directory="ApplicationInstantClient" Guid="2F25F01F-109D-446E-83AC-58256685F5D7">
+                <File Id="fil370C82D7B1486E7DFA1851B62D3139BC" KeyPath="yes" Source="requisite\instantclient_12_1\BASIC_README" />
+            </Component>
+            <Component Id="cmp8D0573CBF08F9E6B81E5580C07080446" Directory="ApplicationInstantClient" Guid="AE43F1CA-E1D7-4076-B74F-64DADC3D24A3">
+                <File Id="fil32D518C2E7F43C34D20711C2C01B4535" KeyPath="yes" Source="requisite\instantclient_12_1\genezi.exe" />
+            </Component>
+            <Component Id="cmp2F5424EE7C5FEA0C94A0092C677F52A9" Directory="ApplicationInstantClient" Guid="E6295CCD-B5E7-4EA9-8398-CBDD998D682B">
+                <File Id="fil778C87E8037D0493003F5CE21D1C53ED" KeyPath="yes" Source="requisite\instantclient_12_1\genezi.sym" />
+            </Component>
+            <Component Id="cmp5C87CE20B0B64859935C2A7725467785" Directory="ApplicationInstantClient" Guid="D9B783DD-7576-43EF-91E4-11420C35AD97">
+                <File Id="fil2854CEED7B77BCA0DC620FC999581F37" KeyPath="yes" Source="requisite\instantclient_12_1\oci.dll" />
+            </Component>
+            <Component Id="cmpC4149E97A5ED6D8735DBD3308C740E3F" Directory="ApplicationInstantClient" Guid="81965B9E-B111-46B1-8CE0-214EB1511718">
+                <File Id="fil1EE285252A316753FB33722C94E0C168" KeyPath="yes" Source="requisite\instantclient_12_1\oci.sym" />
+            </Component>
+            <Component Id="cmp5024397BBC6E2C3DC855E838A818AEB3" Directory="ApplicationInstantClient" Guid="72EAE5C9-E6ED-4E39-9679-18E7F4A61846">
+                <File Id="fil675B589AE1A49E140372530050710923" KeyPath="yes" Source="requisite\instantclient_12_1\ocijdbc12.dll" />
+            </Component>
+            <Component Id="cmpBD0093DA7B8EE10B6A12E6A25080763E" Directory="ApplicationInstantClient" Guid="A69D45C8-191A-4A9E-8065-4ED295C92E4F">
+                <File Id="fil83FEFA01256D64FE747D65763A1D7A1F" KeyPath="yes" Source="requisite\instantclient_12_1\ocijdbc12.sym" />
+            </Component>
+            <Component Id="cmp8A67412C95B97A6550A9BA4B18B02776" Directory="ApplicationInstantClient" Guid="ACD8EAD6-836E-41C5-B3CC-C607DD186FF1">
+                <File Id="fil304EB0CAF72A0B01CEB11E6085899240" KeyPath="yes" Source="requisite\instantclient_12_1\ociw32.dll" />
+            </Component>
+            <Component Id="cmpFE4307828F45DFD062EDEDC7D5D4D208" Directory="ApplicationInstantClient" Guid="97EDB585-56C2-465E-9A6A-CE6B27607399">
+                <File Id="fil36BDC34E07868808BB20BC051C10BFBA" KeyPath="yes" Source="requisite\instantclient_12_1\ociw32.sym" />
+            </Component>
+            <Component Id="cmp4C1F738E7135EC3FAC9E8B35F7CCBDB7" Directory="ApplicationInstantClient" Guid="2D1B5947-D017-46FA-9912-E44B430A940E">
+                <File Id="fil13055AD8A09BBD2AA0EC0B1BC7E3AB69" KeyPath="yes" Source="requisite\instantclient_12_1\ojdbc6.jar" />
+            </Component>
+            <Component Id="cmp00CCCD8FF8C62EF527DBB4DDCF0C3607" Directory="ApplicationInstantClient" Guid="93F1F3C9-F094-440A-BF2F-74B4642142D0">
+                <File Id="filC84997742FC9C6C39D846CA4FBD06EC0" KeyPath="yes" Source="requisite\instantclient_12_1\ojdbc7.jar" />
+            </Component>
+            <Component Id="cmp46A3B3E40658D68AB0DA5772CAA03A73" Directory="ApplicationInstantClient" Guid="23E8678A-DCDB-4155-8BBC-A4F98C142E5F">
+                <File Id="filDBAF0D813AE9B07BB9EB949DDDDC408B" KeyPath="yes" Source="requisite\instantclient_12_1\oramysql12.dll" />
+            </Component>
+            <Component Id="cmp89C8BBD9182DB337ADAD436BBB285A47" Directory="ApplicationInstantClient" Guid="4BAFA7CB-9A68-4C11-A7DC-209CA01437D7">
+                <File Id="filEF8CEF99F7D868DB659941042E4D9140" KeyPath="yes" Source="requisite\instantclient_12_1\oramysql12.sym" />
+            </Component>
+            <Component Id="cmp6C107B132560B11DBDB2508876E19CB1" Directory="ApplicationInstantClient" Guid="ED0141FB-4395-4612-98E5-7FB758520D61">
+                <File Id="fil641D5E2CF013F8ED137AFE6504F165A3" KeyPath="yes" Source="requisite\instantclient_12_1\orannzsbb12.dll" />
+            </Component>
+            <Component Id="cmp2BBA50277A7841D2B85A30188152AE50" Directory="ApplicationInstantClient" Guid="2A045466-D0C0-48D4-BDAA-696018166EE3">
+                <File Id="filAC7BE32D68B80991E1437D8F2DA3DCE4" KeyPath="yes" Source="requisite\instantclient_12_1\orannzsbb12.sym" />
+            </Component>
+            <Component Id="cmp3FA9118294D47E7905F4F0C53857C6CD" Directory="ApplicationInstantClient" Guid="8EA94EA7-813C-4860-9FFB-929A10E2E507">
+                <File Id="fil8871CE52B83B8A6ABDC1C07E36FFDBFE" KeyPath="yes" Source="requisite\instantclient_12_1\oraocci12.dll" />
+            </Component>
+            <Component Id="cmpB37573136CAE661B438CC727BE17BCFE" Directory="ApplicationInstantClient" Guid="C28874C3-B161-454B-A7B5-2E566A5FF7D9">
+                <File Id="fil1889F8564B2644F0B5EE1FF42A91C44C" KeyPath="yes" Source="requisite\instantclient_12_1\oraocci12.sym" />
+            </Component>
+            <Component Id="cmp207E59C1524BBB14F937E7C4E7ED86F6" Directory="ApplicationInstantClient" Guid="BC42C1C2-7F7F-4242-97F1-3216A7280A9C">
+                <File Id="fil512C8318BB2195E02123C4361D9B65B6" KeyPath="yes" Source="requisite\instantclient_12_1\oraocci12d.dll" />
+            </Component>
+            <Component Id="cmpB9E2762741790F9D2FAE6A969AEF6002" Directory="ApplicationInstantClient" Guid="5F119AD0-46D1-44D9-915C-F062F6C1F9BC">
+                <File Id="filDAEAC218EA5D5D78C56FF67B8FB45BD7" KeyPath="yes" Source="requisite\instantclient_12_1\oraocci12d.sym" />
+            </Component>
+            <Component Id="cmp4FD253466A16409D0375F25B364D488C" Directory="ApplicationInstantClient" Guid="DE09FECC-3936-461C-A70E-1B30E126D7ED">
+                <File Id="filED01BA3697AA78A8F3F0286BF198B409" KeyPath="yes" Source="requisite\instantclient_12_1\oraociei12.dll" />
+            </Component>
+            <Component Id="cmpCB29AB9D9C696FAE284CCA8B9264FF35" Directory="ApplicationInstantClient" Guid="8B296654-DCFC-4A73-AB63-8C389C456C6D">
+                <File Id="filF3D45604602FD37F1FB3E0E81608E736" KeyPath="yes" Source="requisite\instantclient_12_1\oraociei12.sym" />
+            </Component>
+            <Component Id="cmp7BF43A0555ED23CFEC128DA84BFE3AB1" Directory="ApplicationInstantClient" Guid="A351BE4B-B428-4341-A50F-A5345081EC95">
+                <File Id="fil69E778B4F789421E9E815B98AA33D00A" KeyPath="yes" Source="requisite\instantclient_12_1\oraons.dll" />
+            </Component>
+            <Component Id="cmp162AADE073F5E7DCAAE6DF91904ED5DB" Directory="ApplicationInstantClient" Guid="CC59E402-0E78-45BA-B65E-23E065F3F3DF">
+                <File Id="fil646B34844386E212D4B9777CD0A93157" KeyPath="yes" Source="requisite\instantclient_12_1\orasql12.dll" />
+            </Component>
+            <Component Id="cmpF7C396989688531629F3482C42FA2A57" Directory="ApplicationInstantClient" Guid="BFF2B238-9A4E-4DFE-BD2D-D5705F21D60A">
+                <File Id="fil5A0F7F37DB747F01633DF9AD5F5697F5" KeyPath="yes" Source="requisite\instantclient_12_1\orasql12.sym" />
+            </Component>
+            <Component Id="cmpD3A531FD92EC915A729773FFD2536407" Directory="ApplicationInstantClient" Guid="A2549BB8-D255-4CFA-87FC-7371DA424AAA">
+                <File Id="fil75AAB3F19DB7EE181FA00C68536F3B4E" KeyPath="yes" Source="requisite\instantclient_12_1\uidrvci.exe" />
+            </Component>
+            <Component Id="cmp8E6DC8EECF406B598A9E09A36FD10472" Directory="ApplicationInstantClient" Guid="1DD8878C-9232-4272-A095-A80BFA97437C">
+                <File Id="fil79AD9B0CB12594F5B0ED8C2C90276FF0" KeyPath="yes" Source="requisite\instantclient_12_1\uidrvci.sym" />
+            </Component>
+            <Component Id="cmp30FA27ED0C9B36A16FBCDD072D4778CB" Directory="ApplicationInstantClient" Guid="54265547-DCC6-4D89-9180-06933AF04A09">
+                <File Id="filA8C355D1CE778C987144431316C8F75C" KeyPath="yes" Source="requisite\instantclient_12_1\xstreams.jar" />
+            </Component>
+            <Component Id="cmpD5401E0482317803B88DAC860182A448" Directory="dirDA3C7BB10366C8E86F9042CDE789A2C4" Guid="CA913234-F120-4249-9464-31A69890AC92">
+                <File Id="filBD42BFBAFDE3B15937DD1AD2F40F4C7F" KeyPath="yes" Source="requisite\instantclient_12_1\vc10\oraocci12.dll" />
+            </Component>
+            <Component Id="cmp858622632C3FD3F37EDE8D9E388603F7" Directory="dirDA3C7BB10366C8E86F9042CDE789A2C4" Guid="7E91E55E-B855-455B-B4D9-1972C73522F6">
+                <File Id="fil077868E71E5FB347A4FF186FB4F2BB21" KeyPath="yes" Source="requisite\instantclient_12_1\vc10\oraocci12.sym" />
+            </Component>
+            <Component Id="cmp96F932D852394685E081727133D38CF8" Directory="dirDA3C7BB10366C8E86F9042CDE789A2C4" Guid="8D19C486-7FE3-4E27-AE80-5FD4FA9C0C58">
+                <File Id="fil3D2327CC3B5487AF6059385F15C38FAC" KeyPath="yes" Source="requisite\instantclient_12_1\vc10\oraocci12d.dll" />
+            </Component>
+            <Component Id="cmpD290831E50D61C324C96FBC470A98834" Directory="dirDA3C7BB10366C8E86F9042CDE789A2C4" Guid="8D3523BF-353B-4288-8FE7-8E650408C35A">
+                <File Id="fil69B80585F834B35279F6B8DD136B9D52" KeyPath="yes" Source="requisite\instantclient_12_1\vc10\oraocci12d.sym" />
+            </Component>
+            <Component Id="cmp8021BDF06E3FD3F8FBDF618EB40A4960" Directory="dirFAE2ADB7ECE432A75BFD8AE9EBB17990" Guid="E204988F-EB01-4BA2-B07D-6F18B2805530">
+                <File Id="filFA3756CD5ECB6A3F8010C3CEBA6728E9" KeyPath="yes" Source="requisite\instantclient_12_1\vc11\oraocci12.dll" />
+            </Component>
+            <Component Id="cmpCA560B7E41E8552D3AD07F752F818041" Directory="dirFAE2ADB7ECE432A75BFD8AE9EBB17990" Guid="821E2589-CBB0-4D41-8626-A6DBBBB633A6">
+                <File Id="fil459BDB1BFE0AAAA043AD38E1F12C93EE" KeyPath="yes" Source="requisite\instantclient_12_1\vc11\oraocci12.sym" />
+            </Component>
+            <Component Id="cmpC4141D27C4C1635C0BB99EE3F148EC71" Directory="dirFAE2ADB7ECE432A75BFD8AE9EBB17990" Guid="54AB5946-AC23-4AC1-9BD6-DBE5BC9449B6">
+                <File Id="filA2C013A75F30F9C92BCA3160C32C5D4B" KeyPath="yes" Source="requisite\instantclient_12_1\vc11\oraocci12d.dll" />
+            </Component>
+            <Component Id="cmp1C24CDFA11FAE5FFE008CBB928F2487A" Directory="dirFAE2ADB7ECE432A75BFD8AE9EBB17990" Guid="FB270F19-F51A-4E33-ABB7-6D7989DAFC22">
+                <File Id="fil552AB5AC8E709AADC6983F620D03FF2C" KeyPath="yes" Source="requisite\instantclient_12_1\vc11\oraocci12d.sym" />
+            </Component>
+            <Component Id="cmp91FB235A35EBB00A9BF9EE5F70602DF7" Directory="dir47BB6AB3552C5C835A9C52E7AA9006AB" Guid="8FF367D6-D55F-40B8-99DB-93334DDC9B2C">
+                <File Id="fil5EB66BF3108E5B515BEC60536FB7DDE5" KeyPath="yes" Source="requisite\instantclient_12_1\vc12\oraocci12.dll" />
+            </Component>
+            <Component Id="cmp359FA4B4D407BEE39F3E0DAF129134BE" Directory="dir47BB6AB3552C5C835A9C52E7AA9006AB" Guid="699E0F14-B21A-4CE1-9973-0B8DF9C96CDE">
+                <File Id="filA61C62C047B61A1CE54F9153730FBBC8" KeyPath="yes" Source="requisite\instantclient_12_1\vc12\oraocci12.sym" />
+            </Component>
+            <Component Id="cmpC3B5816584EA4204DB155CFFD0D9ABD0" Directory="dir47BB6AB3552C5C835A9C52E7AA9006AB" Guid="81535958-24CF-480C-A0E2-93E847F715F8">
+                <File Id="filFB90A485AC89946643E735156D802FC3" KeyPath="yes" Source="requisite\instantclient_12_1\vc12\oraocci12d.dll" />
+            </Component>
+            <Component Id="cmpBBF6384F223FFE8D2FADA010AD488A46" Directory="dir47BB6AB3552C5C835A9C52E7AA9006AB" Guid="AD4EDC96-DAD2-4976-AAA2-F7E6FA9EA544">
+                <File Id="fil490BCE3AEFBE8A570FEEB34D3961FCEA" KeyPath="yes" Source="requisite\instantclient_12_1\vc12\oraocci12d.sym" />
+            </Component>
+        </ComponentGroup>
+    </Fragment>
+</Wix>

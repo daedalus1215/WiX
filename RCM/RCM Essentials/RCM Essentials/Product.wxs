@@ -31,28 +31,14 @@
     <!-- Step 1: Define the directory structure -->
     <Directory Id="TARGETDIR" Name="SourceDir">
       <Directory Id="ApplicationRootDirectory" Name="Iag">
-        <Directory Id="ApplicationApacheDirectory" Name="apache" />
-        <Directory Id="ApplicationPhpDirectory" Name="php"/>
+        <Directory Id="ApplicationApacheDirectory" Name="Apache" />
+        <Directory Id="ApplicationPhpDirectory" Name="Php"/>
         <Directory Id="ApplicationInstantClientDirectory" Name="instantclient_12_1"/>
       </Directory>
     </Directory>
 
     
 
-    <!-- Kill old PHP env variable and Set a new one.-->
-    <Component Id="phpEnvVar" Guid="{A404A63E-5A4A-477E-959B-C8086B4425DE}" Directory="ApplicationRootDirectory">
-      <CreateFolder/>
-      <Environment Id="removePHP" Name="PATH" Value="C:\php" Permanent="no" Part="last" Action="remove" System="yes" />
-      <Environment Id="InsertPHP" Name="IAG" Value="C:\Iag\php" Permanent="no" Part="last" Action="set" System="yes" />
-    </Component>
-
-    <!-- Kill old Apache env variable and set a new one -->
-    <Component Id="apacheEnvVar" Guid="{BEF5671B-C00B-46F3-8850-5BDD7461233D}" Directory="ApplicationRootDirectory">
-      <CreateFolder/>
-      <Environment Id="removeApache" Name="PATH" Value="C:\iag\apache\bin" Permanent="no" Part="last" Action="remove" System="yes" />
-      <Environment Id="InsertApache" Name="IAG" Value="C:\iag\apache\bin" Permanent="no" Part="last" Action="set" System="yes" />
-    </Component>
-  
     <!-- Kill old Oracle Instant Client env variable and set a new one -->
     <Component Id="OracleInstantClientEnvVar" Guid="{91A777F2-DF3C-4F22-9538-7BFFCAF5BB3A}" Directory="ApplicationRootDirectory">
       <CreateFolder/>

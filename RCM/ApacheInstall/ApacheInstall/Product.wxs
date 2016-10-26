@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Product Id="*" Name="ApachePhpService" Language="1033" Version="1.0.0.0" Manufacturer="IAG" UpgradeCode="28278b21-9187-4abb-86f6-4cac661da6fb">
+		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" InstallPrivileges="elevated" />
+
+		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+		<MediaTemplate EmbedCab="yes"/>
+
+    <Directory Id="TARGETDIR" Name="SourceDir">
+		  <Directory Id="ApplicationRootDirectory" Name="Iag">
+			  <Directory Id="ApplicationApacheDirectory" Name="Apache" />
+      <Directory Id="ApplicationPhpDirectory" Name="Php" />
+		  </Directory>
+	  </Directory>
+
+
+    
+    <!-- Create Apache value in IAG environment variable -->
+    <Component Id="evApache"
+               Guid="{A89FC985-76F6-4E4E-9576-FA23184D203D}"
+               Directory="ApplicationRootDirectory">
+      <CreateFolder/>
+      <Environment Id="addevApache" 
+                   Name="IAG" 
+                   Value="C:\Iag\Apache\bin"
+                   Permanent="no"
+                   Action="set"
+                   System="yes"
+                   Part="last"/>
+    </Component>
+    
+    
+    
+    <!-- Main installation beginning. -->
+		<Feature Id="MainFeature" Title="ApachePhpService" Level="1">      
+			<ComponentGroupRef Id="ApacheFilesGroup" />
+      <ComponentRef      Id="evApache" />         
+		</Feature>		
+  
+    <!-- Install httpd service -->
+    <InstallExecuteSequence >
+      <!-- Remove httpd services -->
+      <Custom Action="stopApacheService" Before="StopServices">(NOT UPGRADINGPRODUCTCODE) AND (REMOVE="ALL")</Custom>
+      <Custom Action="removeApacheService" After="stopApacheService">(NOT UPGRADINGPRODUCTCODE) AND (REMOVE="ALL")</Custom>
+      <!-- Remove all directories under C:\Iag-->
+      <Custom Action="removeIag" After="removeApacheService">(NOT UPGRADINGPRODUCTCODE) AND (REMOVE="ALL")</Custom>
+      
+      <!-- Install then Start httpd service. -->
+      <Custom Action="installHttpService" After="InstallInitialize"/>
+      <Custom Action="startHttpService" After="installHttpService"/>
+    </InstallExecuteSequence>         
+	</Product>
+  
+  
+  
+  <!-- Remove Iag directory -->
+  <Fragment>
+    <CustomAction Id="removeIag"
+                  Directory="ApplicationRootDirectory"
+                  Execute="commit"
+                  Impersonate="no"                  
+                  ExeCommand="cmd.exe /C rd /S /Q C:\Iag"
+                  Return="ignore" />
+  </Fragment>
+  
+  
+  
+  
+  <!-- SERVICES -->  
+  
+  <!-- Uninstall httpd (Apache service)-->
+  <Fragment>
+    <CustomAction Id="stopApacheService"
+                  Directory="ApplicationRootDirectory"
+                  Execute="immediate"
+                  ExeCommand="cmd.exe /C httpd -k stop"
+                  Return="ignore"/>
+  </Fragment>
+    
+  <Fragment>
+    <CustomAction Id="removeApacheService"
+                  Directory="ApplicationRootDirectory"
+                  Execute="immediate"
+                  ExeCommand="cmd.exe /C httpd -k uninstall"
+                  Return="ignore"/>
+
+  </Fragment>
+  
+  
+  
+  <!-- Installing httpd (Apache service) -->    
+  <Fragment>
+    <CustomAction Id="installHttpService"
+                  Directory="dirE48640D99CAF2CC8F12F346D465932BA"
+                  Execute="commit"
+                  Impersonate="no"
+                  ExeCommand="cmd.exe /C C:\Iag\Apache\bin\httpd.exe -k install"
+                  Return="ignore"
+                  />
+  </Fragment>
+  
+  <Fragment>
+    <CustomAction Id="startHttpService"
+                  Directory="dirE48640D99CAF2CC8F12F346D465932BA"
+                  Execute="commit"
+                  Impersonate="no"                  
+                  ExeCommand="cmd.exe /C C:\Iag\Apache\bin\httpd.exe -k start"
+                  Return="ignore" />
+  </Fragment>
+</Wix>

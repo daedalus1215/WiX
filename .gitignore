@@ -245,7 +245,8 @@ ModelManifest.xml
 [Aa]pache/
 [Pp]hp/
 instantclient_12_1/
-
+requisites/
+requisite/
 
 # packages I make
 [Bb]in/

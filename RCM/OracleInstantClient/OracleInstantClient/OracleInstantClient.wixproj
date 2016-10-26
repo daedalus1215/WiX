@@ -22,10 +22,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="InstantClientFile.wxs" />
-    <Compile Include="Product.wxs">
-      <Link>
-      </Link>
-    </Compile>
+    <Compile Include="Product.wxs" />
   </ItemGroup>
   <Import Project="$(WixTargetsPath)" />
   <!--

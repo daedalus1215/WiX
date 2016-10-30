@@ -69,7 +69,7 @@
     <InstallExecuteSequence>
       <Custom Action="buildConfig" After="InstallFiles" >NOT Installed</Custom>
     </InstallExecuteSequence>
-    <CustomAction Id="buildConfig" ExeCommand="build_config_array.bat" Directory="ApplicationConfigBinDirectory" Execute="deferred" Return="asyncWait"/>
+    <CustomAction Id="buildConfig" ExeCommand="[ApplicationConfigBinDirectory]build_config_array.bat" Directory="ApplicationConfigBinDirectory" Execute="deferred" Return="check" />
   </Product>
 
 </Wix>

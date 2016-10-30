@@ -11,16 +11,17 @@
       <MsiPackage Id="Apache" SourceFile="ApacheInstall.msi" Compressed="yes" Vital="yes" />
       
       <MsiPackage Id="RCM" SourceFile="RCM_Essentials.msi" Compressed="yes" />
-      
+      <!--
       <MsiPackage Id="OracleInstantClient" SourceFile="OracleInstantClient.msi" Compressed="yes" />
-    
+      
       <ExePackage Id="ImageMagick" SourceFile="prerequisite packages\ImageMagick-6.9.5-10-Q16-x64-dll.exe" Compressed="yes" Vital="yes" />
       
       <MsiPackage Id="RedisServiceInstall" Compressed="yes" SourceFile="prerequisite packages\Redis-x64-3.2.100.msi" DisplayInternalUI="yes" Vital="yes"/>
           
-      <!-- Barcode related installing stuff. -->
+        Barcode related installing stuff. 
       <ExePackage Id="GhostScriptInstall" Compressed="yes" SourceFile="prerequisite packages\barcode\gs920w32.exe" Vital="yes" />
       <MsiPackage Id="BarcodeInstaller" Compressed="yes" SourceFile="BarcodeInstaller.msi" Vital="yes" />                  
+      -->
 		</Chain>
 	</Bundle>
 </Wix>

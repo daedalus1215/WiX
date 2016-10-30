@@ -50,10 +50,6 @@
     </InstallExecuteSequence>         
 	</Product>
 
-  <Fragment>
-    
-  </Fragment>
-  
   <!-- Remove Iag directory -->
   <Fragment>
     <CustomAction Id="removeIag"

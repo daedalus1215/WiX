@@ -32,7 +32,14 @@
     <Directory Id="TARGETDIR" Name="SourceDir">
       <Directory Id="ApplicationRootDirectory" Name="Iag">
         <Directory Id="ApplicationApacheDirectory" Name="Apache">
-          <Directory Id="ApplicationHtdocsDirectory" Name="htdocs" />
+          <Directory Id="ApplicationHtdocsDirectory" Name="htdocs">
+            <!-- Path for the buildConfig script. -->
+            <Directory Id="ApplicationConfigDirectory" Name="config">
+              <Directory Id="ApplicationConfigOfwDirectory" Name="ofw">
+                <Directory Id="ApplicationConfigBinDirectory" Name="bin"/>
+              </Directory>              
+            </Directory>  
+          </Directory>
         </Directory>        
       </Directory>
     </Directory>
@@ -58,9 +65,12 @@
       <ComponentRef Id="evImagick"/>
       <ComponentGroupRef Id="RcmFilesGroup"/>
     </Feature>
-
-
     
+    <InstallExecuteSequence>
+      <Custom Action="buildConfig" After="InstallFiles" >NOT Installed</Custom>
+    </InstallExecuteSequence>
+    <CustomAction Id="buildConfig" ExeCommand="build_config_array.bat" Directory="ApplicationConfigBinDirectory" Execute="deferred" Return="asyncWait"/>
   </Product>
+
 </Wix>
 

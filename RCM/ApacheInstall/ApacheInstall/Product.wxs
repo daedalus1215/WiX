@@ -49,8 +49,10 @@
       <Custom Action="startHttpService" After="installHttpService"/>
     </InstallExecuteSequence>         
 	</Product>
-  
-  
+
+  <Fragment>
+    
+  </Fragment>
   
   <!-- Remove Iag directory -->
   <Fragment>

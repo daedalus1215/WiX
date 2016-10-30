@@ -1,30 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-	<Product Id="*" Name="BarcodeInstaller" Language="1033" Version="1.0.0.0" Manufacturer="" UpgradeCode="b0202fdf-bcce-41bc-9efd-0fb2559dd435">
-		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+  <Product Id="*" Name="BarcodeInstaller" Language="1033" Version="1.0.0.0" Manufacturer="Iag" UpgradeCode="28278b21-9187-4abb-86f6-4cac661da6fb">
+    <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" InstallPrivileges="elevated" />
 
-		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
-		<MediaTemplate />
+    <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+    <MediaTemplate EmbedCab="yes"/>
 
-		<Feature Id="ProductFeature" Title="BarcodeInstaller" Level="1">
-			<ComponentGroupRef Id="ProductComponents" />
-		</Feature>
-	</Product>
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ApplicationRootDirectory" Name="Iag">
+        <Directory Id="gs" Name="gs">
+          <Directory Id="gs9.20" Name="gs9.20">
+            <Directory Id="bin" Name="bin">
 
-	<Fragment>
-		<Directory Id="TARGETDIR" Name="SourceDir">
-			<Directory Id="ProgramFilesFolder">
-				<Directory Id="INSTALLFOLDER" Name="BarcodeInstaller" />
-			</Directory>
-		</Directory>
-	</Fragment>
+            </Directory>
+          </Directory>
+        </Directory>
+        <Directory Id="Applicationpdf417Directory" Name="pdf417" />
+      </Directory>
+    </Directory>
 
-	<Fragment>
-		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
-			<!-- TODO: Remove the comments around this Component element and the ComponentRef below in order to add resources to this installer. -->
-			<!-- <Component Id="ProductComponent"> -->
-				<!-- TODO: Insert files, registry keys, and other resources here. -->
-			<!-- </Component> -->
-		</ComponentGroup>
-	</Fragment>
+    <!-- BarcodeInstaller merely sets Environment Variables and carries over pdf417.exe. We still need to install GhostScript into C:\Iag\ (as you can see below). We will set that in the installer. -->
+  
+    
+    
+    <!-- Envrionment variable for this GHost Script's path if installed at C:\Iag -->
+    <Component Id="evGHostScript"
+               Guid="{E12CA482-E2F9-4A26-86AD-61EE5E43D14D}"
+               Directory="ApplicationRootDirectory">
+      <CreateFolder/>
+      <Environment
+                  Id="addGhostScript"
+                  Name="IAG"
+                  Value="C:\Iag\gs\gs9.20\bin"
+                  Permanent="no"
+                  Action="set"
+                  System="yes"
+                  Part="last"/>
+    </Component>
+
+    <!-- Environment variable for PDF417.exe.-->
+    <Component Id="evPdf417"
+               Guid="{86D90BE4-3146-41D6-8AAC-82B392282C84}"
+               Directory="ApplicationRootDirectory">
+      <CreateFolder/>
+      <Environment
+                  Id="addPdf417"
+                  Name="IAG"
+                  Value="C:\Iag\pdf417"
+                  Permanent="no"
+                  Action="set"
+                  System="yes"
+                  Part="last"/>
+    </Component>
+
+
+    <!-- Main installation beginning. -->
+    <Feature Id="MainFeature" Title="ApachePhpService" Level="1">
+      <ComponentRef      Id="evGHostScript"/>
+      <ComponentRef      Id="evPdf417"/>
+
+      <ComponentRef Id="cmpPdf417"/>
+    </Feature>
+  </Product>
+  
+  <!-- Carry oevr pdf417.exe -->
+  <Fragment>
+    <Component Id="cmpPdf417" Directory="Applicationpdf417Directory" Guid="{9A334A66-5158-4402-BB6F-A4DD31C9B294}">
+      <File Id="filePDF417" KeyPath="yes" Source="requisites\pdf417.exe"/>
+    </Component>
+  </Fragment>
+
 </Wix>

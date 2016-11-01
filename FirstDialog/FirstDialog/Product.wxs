@@ -11,23 +11,54 @@
 		</Feature>
 
     
-    
+    <!-- This will be our User Interface, and the first Dialog box we show is the Dialog element with Id equal to InstallDlg -->
     <UI>
+      <!-- We need to set a default font and this property allows us to point to our custom TextStyle below.-->
       <Property Id="DefaultUIFont">DlgFont8</Property>
       
       <Dialog Id="InstallDlg" Width="370" Height="270" Title="[ProductName] Setup" NoMinimize="yes">
+        
         <Control Id="Title" Type="Text" X="15" Y="6" Width="200" Height="15" Transparent="yes" NoPrefix="yes">
           <Text>{\DlgTitleFont}Ready to Install</Text>
         </Control>
 
-        <Control Id="Install" Type="PushButton" X="304" Y="243" Width="56" Height="17" Default="yes" Text="Install">
+        <Control Id="Install" Type="PushButton" X="304" Y="243" Width="56" Height="17" Default="yes" Text="[ButtonText_Install]">
+          <!-- The action (or event in WiX parlance) associated with pushing the button. -->
           <Publish Event="EndDialog" Value="Return" />
         </Control>
+
+        <Control Id="BannerBitmap" Type="Bitmap" X="0" Y="0" Width="370" Height="44" TabSkip="no" Text="[BannerBitmap]" />
+
+        <Control Id="Description" Type="Text" X="25" Y="23" Width="280" Height="15" Transparent="yes" NoPrefix="yes">
+          <Text>The [Wizard] is ready to begin the installation.</Text>
+        </Control>
+
+        <Control Id="Text" Type="Text" X="25" Y="70" Width="320" Height="20">
+          <Text>Click Install to begin the installation</Text>          
+        </Control>
+
+
+        <Control Id="BottomLine" Type="Line" X="0" Y="234" Width="370" Height="0" />
+        
       </Dialog>
 
-      <TextStyle Id="DlgFont8" FaceName="Tahoma" Size="8" />
-      <TextStyle Id="DlgTitleFont" FaceName="Tahoma" Size="8" Bold="no" />
 
+      <!-- Declare bannrbmp variable with a value linking to the image. -->
+      <Binary Id="bannrbmp" SourceFile="Binary\Banner.bmp" />
+      <!-- Make reference to that declared bannrbmp so we can link to it in our dialog. -->
+      <Property Id="BannerBitmap">bannrbmp</Property>
+      <Property Id="ButtonText_Install">&amp;Install</Property>
+      <Property Id="Wizard">Setup Wizard</Property>
+      <Property Id="Setup">Setup</Property>
+      
+      
+      
+      
+      <!-- This will be the default font, we link to it in the Property with Id equal to DefaultUIFont-->
+      <TextStyle Id="DlgFont8" FaceName="Tahoma" Size="8" />
+      <!-- Custom font we use for the first control (the text control with Id set to Title -->
+      <TextStyle Id="DlgTitleFont" FaceName="Tahoma" Size="8" Bold="no" />
+  
       <InstallUISequence>
         <Show Dialog="InstallDlg" After="CostFinalize" />
       </InstallUISequence>

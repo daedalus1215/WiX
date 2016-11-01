@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Product Id="*" Name="FirstDialog" Language="1033" Version="1.0.0.0" Manufacturer="Me" UpgradeCode="43a6f36e-6771-4fce-ba80-9bf7e9d07d8f">
+		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+		<MediaTemplate EmbedCab="yes" />
+
+		<Feature Id="ProductFeature" Title="FirstDialog" Level="1">
+			
+		</Feature>
+
+    
+    
+    <UI>
+      <Property Id="DefaultUIFont">DlgFont8</Property>
+      
+      <Dialog Id="InstallDlg" Width="370" Height="270" Title="[ProductName] Setup" NoMinimize="yes">
+        <Control Id="Title" Type="Text" X="15" Y="6" Width="200" Height="15" Transparent="yes" NoPrefix="yes">
+          <Text>{\DlgTitleFont}Ready to Install</Text>
+        </Control>
+
+        <Control Id="Install" Type="PushButton" X="304" Y="243" Width="56" Height="17" Default="yes" Text="Install">
+          <Publish Event="EndDialog" Value="Return" />
+        </Control>
+      </Dialog>
+
+      <TextStyle Id="DlgFont8" FaceName="Tahoma" Size="8" />
+      <TextStyle Id="DlgTitleFont" FaceName="Tahoma" Size="8" Bold="no" />
+
+      <InstallUISequence>
+        <Show Dialog="InstallDlg" After="CostFinalize" />
+      </InstallUISequence>
+    </UI>    
+    
+    
+    
+	</Product>
+
+	<Fragment>
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="ProgramFilesFolder">
+				<Directory Id="INSTALLFOLDER" Name="FirstDialog" />
+			</Directory>
+		</Directory>
+	</Fragment>
+
+</Wix>

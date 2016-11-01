@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Bundle Name="CustomBootstrapper" Version="1.0.0.0" Manufacturer="" UpgradeCode="d85e9e06-5ad4-404c-aae3-4ea958e826d4">
+		<BootstrapperApplicationRef Id="ManagedBootstrapperApplicationHost" />
+
+		<Chain>
+			
+		</Chain>
+    
+	</Bundle>
+  <Fragment>
+    <UI Id="myWixUI_Mondo">
+      <UIRef Id="WixUI_Mondo"/>
+      <UIRef Id="WixUI_ErrorProgressText" />
+      
+      <DialogRef Id="UserRegistrationDlg" />
+
+      <Publish Dialog="LicenseAgreementDlg" Control="Next" Event="NewDialog" Value="UserRegistrationDlg" Order="3">LicenseAccepted = "1"</Publish>
+      <Publish Dialog="SetupTypeDlg" Control="Back" Event="NewDialog" Value="UserRegistrationDlg">1</Publish>
+      <Property Id="PIDTemplate"><![CDATA[12345<### ###>@@@@@]]></Property>
+    </UI>
+  </Fragment>
+</Wix>
